@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,10 +46,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -148,6 +160,208 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Sources\constructo-master\about.html" />
+    <Content Include="Sources\constructo-master\blog.html" />
+    <Content Include="Sources\constructo-master\constructo doc\css\font-awesome.min.css" />
+    <Content Include="Sources\constructo-master\constructo doc\css\main.css" />
+    <Content Include="Sources\constructo-master\constructo doc\css\normalize.min.css" />
+    <Content Include="Sources\constructo-master\constructo doc\fonts\fontawesome-webfont.svg" />
+    <Content Include="Sources\constructo-master\constructo doc\img\logo.png" />
+    <Content Include="Sources\constructo-master\constructo doc\index.html" />
+    <Content Include="Sources\constructo-master\constructo doc\js\custom.js" />
+    <Content Include="Sources\constructo-master\constructo doc\js\jquery-1.11.0.min.js" />
+    <Content Include="Sources\constructo-master\constructo doc\js\jquery.nav.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shAutoloader.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushAS3.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushBash.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushCpp.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushCSharp.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushCss.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushDelphi.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushDiff.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushErlang.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushGroovy.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushJava.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushJScript.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushPerl.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushPhp.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushPlain.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushPython.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushRuby.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushSass.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushScala.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushSql.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushVb.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shBrushXml.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\scripts\shLegacy.js" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shCore.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shCoreDefault.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shCoreDjango.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shCoreEclipse.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shCoreEmacs.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shCoreMDUltra.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shCoreMidnight.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shCoreRDark.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shThemeDefault.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shThemeDjango.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shThemeEclipse.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shThemeEmacs.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shThemeMDUltra.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shThemeMidnight.css" />
+    <Content Include="Sources\constructo-master\constructo doc\syntax-highlighter\styles\shThemeRDark.css" />
+    <Content Include="Sources\constructo-master\contact.html" />
+    <Content Include="Sources\constructo-master\contact_process.php" />
+    <Content Include="Sources\constructo-master\css\animate.css" />
+    <Content Include="Sources\constructo-master\css\bootstrap.min.css" />
+    <Content Include="Sources\constructo-master\css\flaticon.css" />
+    <Content Include="Sources\constructo-master\css\font-awesome.min.css" />
+    <Content Include="Sources\constructo-master\css\gijgo.css" />
+    <Content Include="Sources\constructo-master\css\magnific-popup.css" />
+    <Content Include="Sources\constructo-master\css\nice-select.css" />
+    <Content Include="Sources\constructo-master\css\owl.carousel.min.css" />
+    <Content Include="Sources\constructo-master\css\slicknav.css" />
+    <Content Include="Sources\constructo-master\css\style.css" />
+    <Content Include="Sources\constructo-master\css\theme-default.css" />
+    <Content Include="Sources\constructo-master\css\themify-icons.css" />
+    <Content Include="Sources\constructo-master\elements.html" />
+    <Content Include="Sources\constructo-master\fonts\fa-brands-400.svg" />
+    <Content Include="Sources\constructo-master\fonts\fa-regular-400.svg" />
+    <Content Include="Sources\constructo-master\fonts\fa-solid-900.svg" />
+    <Content Include="Sources\constructo-master\fonts\flaticon.css" />
+    <Content Include="Sources\constructo-master\fonts\Flaticon.svg" />
+    <Content Include="Sources\constructo-master\fonts\fontawesome-webfont.svg" />
+    <Content Include="Sources\constructo-master\fonts\gijgo-material.svg" />
+    <Content Include="Sources\constructo-master\fonts\themify.svg" />
+    <Content Include="Sources\constructo-master\img\about\about.png" />
+    <Content Include="Sources\constructo-master\img\about\about2.png" />
+    <Content Include="Sources\constructo-master\img\banner\banner.png" />
+    <Content Include="Sources\constructo-master\img\banner\banner2.png" />
+    <Content Include="Sources\constructo-master\img\banner\bradcam2.png" />
+    <Content Include="Sources\constructo-master\img\banner\bradcam3.png" />
+    <Content Include="Sources\constructo-master\img\banner\chose_banner.png" />
+    <Content Include="Sources\constructo-master\img\banner\contact.png" />
+    <Content Include="Sources\constructo-master\img\banner\denys-nevozhai-w7YCquMkv2c-unsplash.svg" />
+    <Content Include="Sources\constructo-master\img\banner\project_details.png" />
+    <Content Include="Sources\constructo-master\img\blog\author.png" />
+    <Content Include="Sources\constructo-master\img\blog\blog_1.png" />
+    <Content Include="Sources\constructo-master\img\blog\blog_2.png" />
+    <Content Include="Sources\constructo-master\img\blog\blog_3.png" />
+    <Content Include="Sources\constructo-master\img\blog\blog_4.png" />
+    <Content Include="Sources\constructo-master\img\blog\learn_about_bg.png" />
+    <Content Include="Sources\constructo-master\img\blog\single_blog_1.png" />
+    <Content Include="Sources\constructo-master\img\blog\single_blog_2.png" />
+    <Content Include="Sources\constructo-master\img\blog\single_blog_3.png" />
+    <Content Include="Sources\constructo-master\img\blog\single_blog_4.png" />
+    <Content Include="Sources\constructo-master\img\blog\single_blog_5.png" />
+    <Content Include="Sources\constructo-master\img\blog\slide_thumb_1.png" />
+    <Content Include="Sources\constructo-master\img\comment\comment_1.png" />
+    <Content Include="Sources\constructo-master\img\comment\comment_2.png" />
+    <Content Include="Sources\constructo-master\img\comment\comment_3.png" />
+    <Content Include="Sources\constructo-master\img\delicious\1.png" />
+    <Content Include="Sources\constructo-master\img\delicious\2.png" />
+    <Content Include="Sources\constructo-master\img\delicious\3.png" />
+    <Content Include="Sources\constructo-master\img\delicious\4.png" />
+    <Content Include="Sources\constructo-master\img\delicious\5.png" />
+    <Content Include="Sources\constructo-master\img\delicious\6.png" />
+    <Content Include="Sources\constructo-master\img\elements\a.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\a2.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\d.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\disabled-check.png" />
+    <Content Include="Sources\constructo-master\img\elements\disabled-radio.png" />
+    <Content Include="Sources\constructo-master\img\elements\f1.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\f2.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\f3.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\f4.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\f5.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\f6.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\f7.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\f8.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\g1.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\g2.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\g3.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\g4.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\g5.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\g6.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\g7.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\g8.jpg" />
+    <Content Include="Sources\constructo-master\img\elements\primary-check.png" />
+    <Content Include="Sources\constructo-master\img\elements\primary-radio.png" />
+    <Content Include="Sources\constructo-master\img\elements\success-check.png" />
+    <Content Include="Sources\constructo-master\img\elements\success-radio.png" />
+    <Content Include="Sources\constructo-master\img\favicon.ico" />
+    <Content Include="Sources\constructo-master\img\favicon.png" />
+    <Content Include="Sources\constructo-master\img\footer_logo.png" />
+    <Content Include="Sources\constructo-master\img\gallery\1.png" />
+    <Content Include="Sources\constructo-master\img\gallery\2.png" />
+    <Content Include="Sources\constructo-master\img\gallery\3.png" />
+    <Content Include="Sources\constructo-master\img\gallery\4.png" />
+    <Content Include="Sources\constructo-master\img\gallery\5.png" />
+    <Content Include="Sources\constructo-master\img\gallery\6.png" />
+    <Content Include="Sources\constructo-master\img\gallery\7.png" />
+    <Content Include="Sources\constructo-master\img\gallery\8.png" />
+    <Content Include="Sources\constructo-master\img\icon\down.svg" />
+    <Content Include="Sources\constructo-master\img\icon\header-address.svg" />
+    <Content Include="Sources\constructo-master\img\icon\headset.svg" />
+    <Content Include="Sources\constructo-master\img\logo.png" />
+    <Content Include="Sources\constructo-master\img\pattern\pattern.png" />
+    <Content Include="Sources\constructo-master\img\pattern\pattern.svg" />
+    <Content Include="Sources\constructo-master\img\post\next.png" />
+    <Content Include="Sources\constructo-master\img\post\post_1.png" />
+    <Content Include="Sources\constructo-master\img\post\post_10.png" />
+    <Content Include="Sources\constructo-master\img\post\post_2.png" />
+    <Content Include="Sources\constructo-master\img\post\post_3.png" />
+    <Content Include="Sources\constructo-master\img\post\post_4.png" />
+    <Content Include="Sources\constructo-master\img\post\post_5.png" />
+    <Content Include="Sources\constructo-master\img\post\post_6.png" />
+    <Content Include="Sources\constructo-master\img\post\post_7.png" />
+    <Content Include="Sources\constructo-master\img\post\post_8.png" />
+    <Content Include="Sources\constructo-master\img\post\post_9.png" />
+    <Content Include="Sources\constructo-master\img\post\preview.png" />
+    <Content Include="Sources\constructo-master\img\service\1.png" />
+    <Content Include="Sources\constructo-master\img\service\2.png" />
+    <Content Include="Sources\constructo-master\img\service\3.png" />
+    <Content Include="Sources\constructo-master\img\service\4.png" />
+    <Content Include="Sources\constructo-master\img\service\5.png" />
+    <Content Include="Sources\constructo-master\img\service\6.png" />
+    <Content Include="Sources\constructo-master\img\testimonial\1.png" />
+    <Content Include="Sources\constructo-master\index.html" />
+    <Content Include="Sources\constructo-master\js\ajax-form.js" />
+    <Content Include="Sources\constructo-master\js\bootstrap.min.js" />
+    <Content Include="Sources\constructo-master\js\contact.js" />
+    <Content Include="Sources\constructo-master\js\gijgo.min.js" />
+    <Content Include="Sources\constructo-master\js\imagesloaded.pkgd.min.js" />
+    <Content Include="Sources\constructo-master\js\isotope.pkgd.min.js" />
+    <Content Include="Sources\constructo-master\js\jquery.ajaxchimp.min.js" />
+    <Content Include="Sources\constructo-master\js\jquery.counterup.min.js" />
+    <Content Include="Sources\constructo-master\js\jquery.form.js" />
+    <Content Include="Sources\constructo-master\js\jquery.magnific-popup.min.js" />
+    <Content Include="Sources\constructo-master\js\jquery.scrollUp.min.js" />
+    <Content Include="Sources\constructo-master\js\jquery.slicknav.min.js" />
+    <Content Include="Sources\constructo-master\js\jquery.validate.min.js" />
+    <Content Include="Sources\constructo-master\js\mail-script.js" />
+    <Content Include="Sources\constructo-master\js\main.js" />
+    <Content Include="Sources\constructo-master\js\nice-select.min.js" />
+    <Content Include="Sources\constructo-master\js\owl.carousel.min.js" />
+    <Content Include="Sources\constructo-master\js\plugins.js" />
+    <Content Include="Sources\constructo-master\js\popper.min.js" />
+    <Content Include="Sources\constructo-master\js\scrollIt.js" />
+    <Content Include="Sources\constructo-master\js\slick.min.js" />
+    <Content Include="Sources\constructo-master\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="Sources\constructo-master\js\vendor\modernizr-3.5.0.min.js" />
+    <Content Include="Sources\constructo-master\js\waypoints.min.js" />
+    <Content Include="Sources\constructo-master\js\wow.min.js" />
+    <Content Include="Sources\constructo-master\main.html" />
+    <Content Include="Sources\constructo-master\project.html" />
+    <Content Include="Sources\constructo-master\project_details.html" />
+    <Content Include="Sources\constructo-master\readme.txt" />
+    <Content Include="Sources\constructo-master\services.html" />
+    <Content Include="Sources\constructo-master\single-blog.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -162,6 +376,66 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Sources\constructo-master\.DS_Store" />
+    <Content Include="Sources\constructo-master\constructo doc\fonts\fontawesome-webfont.eot" />
+    <Content Include="Sources\constructo-master\constructo doc\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Sources\constructo-master\constructo doc\fonts\fontawesome-webfont.woff" />
+    <Content Include="Sources\constructo-master\constructo doc\fonts\FontAwesome.otf" />
+    <Content Include="Sources\constructo-master\css\style.map" />
+    <Content Include="Sources\constructo-master\css\theme-default.map" />
+    <Content Include="Sources\constructo-master\fonts\fa-brands-400.eot" />
+    <Content Include="Sources\constructo-master\fonts\fa-brands-400.ttf" />
+    <Content Include="Sources\constructo-master\fonts\fa-brands-400.woff" />
+    <Content Include="Sources\constructo-master\fonts\fa-brands-400.woff2" />
+    <Content Include="Sources\constructo-master\fonts\fa-regular-400.eot" />
+    <Content Include="Sources\constructo-master\fonts\fa-regular-400.ttf" />
+    <Content Include="Sources\constructo-master\fonts\fa-regular-400.woff" />
+    <Content Include="Sources\constructo-master\fonts\fa-regular-400.woff2" />
+    <Content Include="Sources\constructo-master\fonts\fa-solid-900.eot" />
+    <Content Include="Sources\constructo-master\fonts\fa-solid-900.ttf" />
+    <Content Include="Sources\constructo-master\fonts\fa-solid-900.woff" />
+    <Content Include="Sources\constructo-master\fonts\fa-solid-900.woff2" />
+    <Content Include="Sources\constructo-master\fonts\Flaticon.eot" />
+    <Content Include="Sources\constructo-master\fonts\Flaticon.ttf" />
+    <Content Include="Sources\constructo-master\fonts\Flaticon.woff" />
+    <Content Include="Sources\constructo-master\fonts\Flaticon.woff2" />
+    <Content Include="Sources\constructo-master\fonts\fontawesome-webfont.eot" />
+    <Content Include="Sources\constructo-master\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Sources\constructo-master\fonts\fontawesome-webfont.woff" />
+    <Content Include="Sources\constructo-master\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Sources\constructo-master\fonts\FontAwesome.otf" />
+    <Content Include="Sources\constructo-master\fonts\gijgo-material.eot" />
+    <Content Include="Sources\constructo-master\fonts\gijgo-material.ttf" />
+    <Content Include="Sources\constructo-master\fonts\gijgo-material.woff" />
+    <Content Include="Sources\constructo-master\fonts\themify.eot" />
+    <Content Include="Sources\constructo-master\fonts\themify.ttf" />
+    <Content Include="Sources\constructo-master\fonts\themify.woff" />
+    <Content Include="Sources\constructo-master\scss\style.scss" />
+    <Content Include="Sources\constructo-master\scss\theme-default.scss" />
+    <Content Include="Sources\constructo-master\scss\_about.scss" />
+    <Content Include="Sources\constructo-master\scss\_blog.scss" />
+    <Content Include="Sources\constructo-master\scss\_blog_part.scss" />
+    <Content Include="Sources\constructo-master\scss\_bradcam.scss" />
+    <Content Include="Sources\constructo-master\scss\_btn.scss" />
+    <Content Include="Sources\constructo-master\scss\_choseus.scss" />
+    <Content Include="Sources\constructo-master\scss\_contact.scss" />
+    <Content Include="Sources\constructo-master\scss\_contact_action.scss" />
+    <Content Include="Sources\constructo-master\scss\_delicious.scss" />
+    <Content Include="Sources\constructo-master\scss\_elements.scss" />
+    <Content Include="Sources\constructo-master\scss\_extend.scss" />
+    <Content Include="Sources\constructo-master\scss\_features.scss" />
+    <Content Include="Sources\constructo-master\scss\_footer.scss" />
+    <Content Include="Sources\constructo-master\scss\_gallery.scss" />
+    <Content Include="Sources\constructo-master\scss\_header.scss" />
+    <Content Include="Sources\constructo-master\scss\_mixins.scss" />
+    <Content Include="Sources\constructo-master\scss\_offers.scss" />
+    <Content Include="Sources\constructo-master\scss\_responsive.scss" />
+    <Content Include="Sources\constructo-master\scss\_section_title.scss" />
+    <Content Include="Sources\constructo-master\scss\_service.scss" />
+    <Content Include="Sources\constructo-master\scss\_slick-nav.scss" />
+    <Content Include="Sources\constructo-master\scss\_slider.scss" />
+    <Content Include="Sources\constructo-master\scss\_testmonial.scss" />
+    <Content Include="Sources\constructo-master\scss\_varriable.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -213,7 +487,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
