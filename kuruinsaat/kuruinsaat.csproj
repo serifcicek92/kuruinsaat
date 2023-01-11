@@ -134,9 +134,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entity\DataContext.cs" />
+    <Compile Include="Entity\DataInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ElementTypeModel.cs" />
+    <Compile Include="Models\KullaniciModel.cs" />
+    <Compile Include="Models\ProjeModel.cs" />
+    <Compile Include="Models\ResimModel.cs" />
+    <Compile Include="Models\RolModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -440,7 +447,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
