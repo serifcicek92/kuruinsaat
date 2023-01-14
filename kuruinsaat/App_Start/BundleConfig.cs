@@ -20,11 +20,38 @@ namespace kuruinsaat
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.min.css", 
+                      "~/Content/owl.carousel.min.css",
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/magnific-popup.css",
+                      "~/Content/themify-icons.css",
+                      "~/Content/gijgo.css",
+                      "~/Content/nice-select.css",
+                      "~/Content/flaticon.css",
+                      "~/Content/slicknav.css",
+                      "~/Content/style.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/javascripts").Include(
+                      "~/Scripts/vendor/modernizr-3.5.0.min.js",
+                      "~/Scripts/popper.min.js",
+                      "~/Scripts/owl.carousel.min.js",
+                      "~/Scripts/isotope.pkgd.min.js",
+                      "~/Scripts/ajax-form.js",
+                      "~/Scripts/waypoints.min.js",
+                      "~/Scripts/jquery.counterup.min.js",
+                      "~/Scripts/imagesloaded.pkgd.min.js",
+                      "~/Scripts/scrollIt.js",
+                      "~/Scripts/jquery.scrollUp.min.js",
+                      "~/Scripts/wow.min.js",
+                      "~/Scripts/gijgo.min.js",
+                      "~/Scripts/nice-select.min.js",
+                      "~/Scripts/jquery.slicknav.min.js",
+                      "~/Scripts/plugins.js"));
+
+
         }
     }
 }
