@@ -8,16 +8,19 @@ namespace kuruinsaat
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //BundleTable.EnableOptimizations = true;
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/vendor/jquery-1.12.4.min.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            // "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+            //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+            //            "~/Scripts/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Scripts/vendor/modernizr-3.5.0.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.min.js"));
@@ -32,6 +35,7 @@ namespace kuruinsaat
                       "~/Content/nice-select.css",
                       "~/Content/flaticon.css",
                       "~/Content/slicknav.css",
+                      "~/Content/theme-default.css",
                       "~/Content/style.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/javascripts").Include(
@@ -50,7 +54,6 @@ namespace kuruinsaat
                       "~/Scripts/nice-select.min.js",
                       "~/Scripts/jquery.slicknav.min.js",
                       "~/Scripts/plugins.js"));
-
 
         }
     }
