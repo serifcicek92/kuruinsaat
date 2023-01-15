@@ -132,7 +132,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HakkimizdaController.cs" />
+    <Compile Include="Controllers\AnasayfaController.cs" />
+    <Compile Include="Controllers\HelperController.cs" />
     <Compile Include="Entity\DataContext.cs" />
     <Compile Include="Entity\DataInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -147,6 +149,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\banner\banner1.jpg" />
+    <Content Include="Assets\Images\logo\kuruinsaat.png" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -452,9 +456,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Hakkimizda\Hakkimizda.cshtml" />
+    <Content Include="Views\Anasayfa\Contact.cshtml" />
+    <Content Include="Views\Anasayfa\Index.cshtml" />
     <Content Include="Sources\constructo-master\.DS_Store" />
     <Content Include="Sources\constructo-master\constructo doc\fonts\fontawesome-webfont.eot" />
     <Content Include="Sources\constructo-master\constructo doc\fonts\fontawesome-webfont.ttf" />
@@ -518,6 +522,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Helper\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

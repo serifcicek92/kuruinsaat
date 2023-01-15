@@ -53,8 +53,14 @@ namespace kuruinsaat
                       "~/Scripts/gijgo.min.js",
                       "~/Scripts/nice-select.min.js",
                       "~/Scripts/jquery.slicknav.min.js",
-                      "~/Scripts/plugins.js"));
-
+                      "~/Scripts/plugins.js",
+                      "~/Scripts/jquery.magnific-popup.min.js",
+                      "~/Scripts/contact.js",
+                      "~/Scripts/jquery.ajaxchimp.min.js",
+                      "~/Scripts/jquery.form.js",
+                      "~/Scripts/jquery.validate.min.js",
+                      "~/Scripts/mail-script.js",
+                      "~/Scripts/main.js"));
         }
     }
 }

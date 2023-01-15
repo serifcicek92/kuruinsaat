@@ -8,6 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    <!-- CSS here -->
+    @*<link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/gijgo.css">
+    <link rel="stylesheet" href="~/Content/nice-select.css">
+    <link rel="stylesheet" href="~/Content/flaticon.css">
+    <link rel="stylesheet" href="~/Content/slicknav.css">
+
+    <link rel="stylesheet" href="~/Content/style.css">*@
 </head>
 <body>
     <!-- header-start -->
@@ -35,8 +47,8 @@
                     <div class="row justify-content-between align-items-center">
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="">
+                                <a href="/#">                               
+                                    <img src="~/Assets/Images/logo/kuru.png" />
                                 </a>
                             </div>
                         </div>
@@ -72,7 +84,7 @@
                             <div class="col-12 d-lg-none">
                                 <div class="logo ">
                                     <a href="#">
-                                        <img src="img/logo.png" alt="">
+                                        <img src="~/Assets/Images/logo/kuru2.png" />
                                     </a>
                                 </div>
                             </div>
@@ -80,25 +92,25 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="index.html">home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="services.html">Services</a></li>
+                                            <li><a class="active" href="/#">Anasayfa</a></li>
+                                            <li><a href="Hakkimizda">Hakkımızda</a></li>
+                                           @* <li><a href="services.html">Services</a></li>*@
                                             <li>
-                                                <a href="#">pages <i class="ti-angle-down"></i></a>
+                                                <a href="#">Projeler <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="project.html">project</a></li>
-                                                    <li><a href="elements.html">elements</a></li>
-                                                    <li><a href="project_details.html">project details</a></li>
+                                                    <li><a href="project.html">Devam Eden</a></li>
+                                                    <li><a href="elements.html">Tamamlanan</a></li>
+                                                    @*<li><a href="project_details.html">project details</a></li>*@
                                                 </ul>
                                             </li>
-                                            <li>
+                                            @*<li>
                                                 <a href="#">blog <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">blog</a></li>
                                                     <li><a href="single-blog.html">single-blog</a></li>
                                                 </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            </li>*@
+                                            <li><a href="contact.html">İletişim</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -263,12 +275,70 @@
         </div>
     </footer>
     <!-- footer_end  -->
-
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/javascripts")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/javascripts")
     @RenderSection("scripts", required: false)
     @Scripts.Render("~/bundles/modernizr")
+
+
+    <!-- JS here -->
+    <!--<script src="~/Scripts/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~/Scripts/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/isotope.pkgd.min.js"></script>
+    <script src="~/Scripts/ajax-form.js"></script>
+    <script src="~/Scripts/waypoints.min.js"></script>
+    <script src="~/Scripts/jquery.counterup.min.js"></script>
+    <script src="~/Scripts/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Scripts/scrollIt.js"></script>
+    <script src="~/Scripts/jquery.scrollUp.min.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script src="~/Scripts/gijgo.min.js"></script>
+    <script src="~/Scripts/nice-select.min.js"></script>
+    <script src="~/Scripts/jquery.slicknav.min.js"></script>
+    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/plugins.js"></script>-->
+
+    <!--contact js-->
+    <!--<script src="~/Scripts/contact.js"></script>
+    <script src="~/Scripts/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Scripts/jquery.form.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/mail-script.js"></script>
+
+
+    <script src="~/Scripts/main.js"></script>-->
+
+
+    <!-- Modal -->
+    <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="serch_form">
+                    <input type="text" placeholder="search">
+                    <button type="submit">search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-calendar-o"></span>'
+            }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-calendar-o"></span>'
+            }
+
+        });
+    </script>
 
 
 </body>

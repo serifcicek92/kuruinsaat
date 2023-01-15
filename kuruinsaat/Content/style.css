@@ -1506,7 +1506,7 @@ h3 {
 /* line 397, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_header.scss */
 .header-area .address_bar {
   background: rgba(4, 14, 39, 0.5);
-  padding-top: 29px;
+  padding-top: 09px;
   padding-bottom: 64px;
 }
 
@@ -1576,9 +1576,10 @@ h3 {
 
 @media (max-width: 767px) {
   /* line 31, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
-  .slider_area .single_slider .slider_text {
-    margin: 100px 0 50px 0;
-  }
+    .slider_area .single_slider .slider_text {
+        margin-top:25vh;
+        min-height: 40vh;
+    }
 }
 
 /* line 35, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
@@ -1594,16 +1595,16 @@ h3 {
 }
 
 /* line 44, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
-.slider_area .single_slider .slider_text h3 span {
-  font-weight: 700;
-}
+    .slider_area .single_slider .slider_text h3 span {
+        font-weight: 700;
+    }
 
 @media (max-width: 767px) {
   /* line 35, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
-  .slider_area .single_slider .slider_text h3 {
-    font-size: 30px;
-    line-height: 45px;
-  }
+    .slider_area .single_slider .slider_text h3 {
+        font-size: 30px;
+        line-height: 45px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
