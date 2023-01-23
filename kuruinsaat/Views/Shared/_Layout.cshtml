@@ -10,16 +10,16 @@
     @Styles.Render("~/Content/css")
     <!-- CSS here -->
     @*<link rel="stylesheet" href="~/Content/bootstrap.min.css">
-    <link rel="stylesheet" href="~/Content/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/Content/magnific-popup.css">
-    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
-    <link rel="stylesheet" href="~/Content/themify-icons.css">
-    <link rel="stylesheet" href="~/Content/gijgo.css">
-    <link rel="stylesheet" href="~/Content/nice-select.css">
-    <link rel="stylesheet" href="~/Content/flaticon.css">
-    <link rel="stylesheet" href="~/Content/slicknav.css">
+        <link rel="stylesheet" href="~/Content/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/Content/magnific-popup.css">
+        <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+        <link rel="stylesheet" href="~/Content/themify-icons.css">
+        <link rel="stylesheet" href="~/Content/gijgo.css">
+        <link rel="stylesheet" href="~/Content/nice-select.css">
+        <link rel="stylesheet" href="~/Content/flaticon.css">
+        <link rel="stylesheet" href="~/Content/slicknav.css">
 
-    <link rel="stylesheet" href="~/Content/style.css">*@
+        <link rel="stylesheet" href="~/Content/style.css">*@
 </head>
 <body>
     <!-- header-start -->
@@ -30,12 +30,12 @@
                     <div class="row align-items-center">
                         <div class="col-xl-5 col-md-5 ">
                             <div class="header_left">
-                                <p>Opening Hour: (10.00-07.00)</p>
+                                <p></br>@*Çalışma Saatleri: 7/24*@</p>
                             </div>
                         </div>
                         <div class="col-xl-7 col-md-7">
                             <div class="header_right d-flex justify-content-end">
-                                <a href="#" class="boxed-btn3">Get a Quote</a>
+                                @*<a href="#" class="boxed-btn3">Get a Quote</a>*@
                             </div>
 
                         </div>
@@ -47,7 +47,7 @@
                     <div class="row justify-content-between align-items-center">
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
-                                <a href="/#">                               
+                                <a href="/#">
                                     <img src="~/Assets/Images/logo/kuru.png" />
                                 </a>
                             </div>
@@ -59,8 +59,8 @@
                                         <img src="img/icon/header-address.svg" alt="">
                                     </div>
                                     <div class="address_info">
-                                        <h3>Address</h3>
-                                        <p>20/D, Kings road, Green lane</p>
+                                        <h3>Adres</h3>
+                                        <p>Merkez, 52102. Sk. NO 5, 33330 Mezitli/Mersin</p>
                                     </div>
                                 </div>
                                 <div class="single_address d-flex">
@@ -68,8 +68,8 @@
                                         <img src="img/icon/headset.svg" alt="">
                                     </div>
                                     <div class="address_info">
-                                        <h3>Call Us</h3>
-                                        <p>+10 673 567 367</p>
+                                        <h3>Bizi Arayın</h3>
+                                        <p>+90 532 776 48 82</p>
                                     </div>
                                 </div>
                             </div>
@@ -92,9 +92,9 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="/#">Anasayfa</a></li>
-                                            <li><a href="Hakkimizda">Hakkımızda</a></li>
-                                           @* <li><a href="services.html">Services</a></li>*@
+                                            <li><a class="active" href="~/">Anasayfa</a></li>
+                                            <li><a href="~/hakkimizda">Hakkımızda</a></li>
+                                            @* <li><a href="services.html">Services</a></li>*@
                                             <li>
                                                 <a href="#">Projeler <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -104,13 +104,13 @@
                                                 </ul>
                                             </li>
                                             @*<li>
-                                                <a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
-                                                </ul>
-                                            </li>*@
-                                            <li><a href="contact.html">İletişim</a></li>
+                                                    <a href="#">blog <i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="blog.html">blog</a></li>
+                                                        <li><a href="single-blog.html">single-blog</a></li>
+                                                    </ul>
+                                                </li>*@
+                                            <li><a href="~/iletisim">İletişim</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -276,8 +276,8 @@
     </footer>
     <!-- footer_end  -->
     @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/javascripts")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/javascripts")
     @RenderSection("scripts", required: false)
     @Scripts.Render("~/bundles/modernizr")
 
@@ -301,7 +301,6 @@
     <script src="~/Scripts/jquery.slicknav.min.js"></script>
     <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
     <script src="~/Scripts/plugins.js"></script>-->
-
     <!--contact js-->
     <!--<script src="~/Scripts/contact.js"></script>
     <script src="~/Scripts/jquery.ajaxchimp.min.js"></script>
@@ -311,8 +310,6 @@
 
 
     <script src="~/Scripts/main.js"></script>-->
-
-
     <!-- Modal -->
     <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

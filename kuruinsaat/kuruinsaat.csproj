@@ -135,6 +135,7 @@
     <Compile Include="Controllers\HakkimizdaController.cs" />
     <Compile Include="Controllers\AnasayfaController.cs" />
     <Compile Include="Controllers\HelperController.cs" />
+    <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Entity\DataContext.cs" />
     <Compile Include="Entity\DataInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -151,6 +152,7 @@
   <ItemGroup>
     <Content Include="Assets\Images\banner\banner1.jpg" />
     <Content Include="Assets\Images\logo\kuruinsaat.png" />
+    <Content Include="Assets\Images\hakkimizda.jpg" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -519,6 +521,7 @@
     <Content Include="Sources\constructo-master\scss\_slider.scss" />
     <Content Include="Sources\constructo-master\scss\_testmonial.scss" />
     <Content Include="Sources\constructo-master\scss\_varriable.scss" />
+    <Content Include="Views\Iletisim\Iletisim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
