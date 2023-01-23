@@ -15,6 +15,7 @@
 
         protected override void Seed(kuruinsaat.Entity.DataContext context)
         {
+            
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
@@ -23,5 +24,6 @@
             //update - database
 
         }
+
     }
 }

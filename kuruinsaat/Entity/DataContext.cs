@@ -11,8 +11,12 @@ namespace kuruinsaat.Entity
     {
         public DataContext() : base("KuruInsaatDatabase")
         {
-            Database.SetInitializer<DataContext>(new DataInitializer());
+            //Database.SetInitializer<DataContext>(new CreateDatabaseIfNotExists<DataContext>());
 
+            //Database.SetInitializer<DataContext>(new DropCreateDatabaseIfModelChanges<DataContext>());
+            Database.SetInitializer<DataContext>(new DataInitializer());
+            //Database.SetInitializer<SchoolDBContext>(new DropCreateDatabaseAlways<SchoolDBContext>());
+            //Database.SetInitializer<SchoolDBContext>(new SchoolDBInitializer());
         }
 
         public DbSet<Kullanici> Kullanicilar { get; set; }
