@@ -1,4 +1,19 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string page = Request.Path.Substring(Request.Path.LastIndexOf("/") + 1) ?? "";
+
+    string pageName(string name)
+    {
+        if (page.ToLower().Equals(name.ToLower()))
+        {
+
+            return "class=active";
+        }
+
+        return "";
+
+    }
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -92,8 +107,8 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="~/">Anasayfa</a></li>
-                                            <li><a href="~/hakkimizda">Hakkımızda</a></li>
+                                            <li><a @(pageName("")) href="/">Anasayfa</a></li>
+                                            <li><a @(pageName("hakkimizda")) href="/hakkimizda">Hakkımızda</a></li>
                                             @* <li><a href="services.html">Services</a></li>*@
                                             <li>
                                                 <a href="#">Projeler <i class="ti-angle-down"></i></a>
@@ -110,7 +125,7 @@
                                                         <li><a href="single-blog.html">single-blog</a></li>
                                                     </ul>
                                                 </li>*@
-                                            <li><a href="~/iletisim">İletişim</a></li>
+                                            <li><a @(pageName("iletisim")) href="/iletisim">İletişim</a></li>
                                         </ul>
                                     </nav>
                                 </div>
