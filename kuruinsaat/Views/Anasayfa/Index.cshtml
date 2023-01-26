@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<kuruinsaat.Models.Resim>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -31,13 +32,13 @@
                                 İnşaat
                             </h3>
                             <p>Profesyonel Dokunuşla Ve Güvenle Evinizi İnşa Edelim</p>
-                           @* <a href="services.html" class="boxed-btn3">Our Services</a>*@
+                            @* <a href="services.html" class="boxed-btn3">Our Services</a>*@
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="single_slider  d-flex align-items-center overlay"  style="background-image: url('../../Assets/Images/banner/banner2.png'); ">
+        <div class="single_slider  d-flex align-items-center overlay" style="background-image: url('../../Assets/Images/banner/banner2.png'); ">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-9 col-md-9 col-md-12">
@@ -134,84 +135,84 @@
 <!-- about_area_end  -->
 <!-- service_area_start  -->
 @*<div class="service_area">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="section_title text-center mb-50">
-                    <h3>Projelerimiz</h3>
-                </div>
-            </div>
-        </div>
-        <div class="border_bottom_1px position-relative">
-            <div class="pattern_img d-none d-xl-block">
-                <img src="img/pattern/pattern.png" alt="">
-            </div>
+        <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="service_active owl-carousel">
-                        <div class="single_service">
-                            <div class="thumb">
-                                <img src="img/service/1.png" alt="">
+                    <div class="section_title text-center mb-50">
+                        <h3>Projelerimiz</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="border_bottom_1px position-relative">
+                <div class="pattern_img d-none d-xl-block">
+                    <img src="img/pattern/pattern.png" alt="">
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="service_active owl-carousel">
+                            <div class="single_service">
+                                <div class="thumb">
+                                    <img src="img/service/1.png" alt="">
+                                </div>
+                                <div class="service_info">
+                                    <a href="#">
+                                        <h3>Selen Evler</h3>
+                                    </a>
+                                    <p>There are many variations of passages of lorem Ipsum available.</p>
+                                    <a class="d-flex align-items-center" href="#">
+                                        More <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="service_info">
-                                <a href="#">
-                                    <h3>Selen Evler</h3>
-                                </a>
-                                <p>There are many variations of passages of lorem Ipsum available.</p>
-                                <a class="d-flex align-items-center" href="#">
-                                    More <i class="ti-angle-right"></i>
-                                </a>
+                            <div class="single_service">
+                                <div class="thumb">
+                                    <img src="img/service/2.png" alt="">
+                                </div>
+                                <div class="service_info">
+                                    <a href="#">
+                                        <h3>Building Construction</h3>
+                                    </a>
+                                    <p>There are many variations of passages of lorem Ipsum available.</p>
+                                    <a class="d-flex align-items-center" href="#">
+                                        More <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="single_service">
-                            <div class="thumb">
-                                <img src="img/service/2.png" alt="">
+                            <div class="single_service">
+                                <div class="thumb">
+                                    <img src="img/service/3.png" alt="">
+                                </div>
+                                <div class="service_info">
+                                    <a href="#">
+                                        <h3>Bridge & Road Construction</h3>
+                                    </a>
+                                    <p>There are many variations of passages of lorem Ipsum available.</p>
+                                    <a class="d-flex align-items-center" href="#">
+                                        More <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="service_info">
-                                <a href="#">
-                                    <h3>Building Construction</h3>
-                                </a>
-                                <p>There are many variations of passages of lorem Ipsum available.</p>
-                                <a class="d-flex align-items-center" href="#">
-                                    More <i class="ti-angle-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="single_service">
-                            <div class="thumb">
-                                <img src="img/service/3.png" alt="">
-                            </div>
-                            <div class="service_info">
-                                <a href="#">
-                                    <h3>Bridge & Road Construction</h3>
-                                </a>
-                                <p>There are many variations of passages of lorem Ipsum available.</p>
-                                <a class="d-flex align-items-center" href="#">
-                                    More <i class="ti-angle-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="single_service">
-                            <div class="thumb">
-                                <img src="img/service/1.png" alt="">
-                            </div>
-                            <div class="service_info">
-                                <a href="#">
-                                    <h3>maintenance & Repair </h3>
-                                </a>
-                                <p>There are many variations of passages of lorem Ipsum available.</p>
-                                <a class="d-flex align-items-center" href="#">
-                                    More <i class="ti-angle-right"></i>
-                                </a>
+                            <div class="single_service">
+                                <div class="thumb">
+                                    <img src="img/service/1.png" alt="">
+                                </div>
+                                <div class="service_info">
+                                    <a href="#">
+                                        <h3>maintenance & Repair </h3>
+                                    </a>
+                                    <p>There are many variations of passages of lorem Ipsum available.</p>
+                                    <a class="d-flex align-items-center" href="#">
+                                        More <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-</div>*@
+        </div>
+    </div>*@
 <!-- service_area_end  -->
 <!-- gallery_area-START -->
 <div class="gallery_area">
@@ -235,12 +236,18 @@
             </div>
         </div>
     </div>
+    <div>
+        @foreach (var item in Model)
+        {
+            <text>element id =</text> @(item.ResimYolu)
+        }
+    </div>
     <div class="container-fluid p-0">
         <div class="row grid no-gutters">
             <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat1">
                 <div class="single_gallery">
                     <div class="thumb">
-                        <img src="img/gallery/1.png" alt="">
+                        <img src="~/Assets/Images/projeler/@(Model.First().ResimYolu)" alt="">
                     </div>
                     <div class="gallery_hover">
                         <div class="hover_inner d-flex align-items-center justify-content-between">
@@ -493,7 +500,7 @@
 
 @section scripts {
     <script type="text/javascript">
-        
+
 
     </script>
 }

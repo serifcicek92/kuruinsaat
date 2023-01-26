@@ -15,7 +15,7 @@ namespace kuruinsaat.Entity
 
             //Database.SetInitializer<DataContext>(new DropCreateDatabaseIfModelChanges<DataContext>());
             Database.SetInitializer<DataContext>(new DataInitializer());
-            //Database.SetInitializer<SchoolDBContext>(new DropCreateDatabaseAlways<SchoolDBContext>());
+            //Database.SetInitializer<DataContext>(new DropCreateDatabaseAlways<DataContext>());
             //Database.SetInitializer<SchoolDBContext>(new SchoolDBInitializer());
         }
 

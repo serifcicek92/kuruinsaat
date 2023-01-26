@@ -14,7 +14,7 @@ namespace kuruinsaat.Controllers
         public ActionResult Index()
         {
             List<Resim> resimler =  db.Resimler.ToList();
-            return View();
+            return View(resimler);
         }
     }
 }
