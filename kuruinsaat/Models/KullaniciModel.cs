@@ -48,8 +48,6 @@ namespace kuruinsaat.Models
         [DisplayName("Doğum Tarihi")]
         public DateTime? DogumTarihi { get; set; }
         public int? RolId { get; set; }
-        public Rol Rol { get; set; }
-        [DisplayName("Oluşturma Tarihi")]
         public DateTime? OlusturmaTarihi { get; set; }
 
         [DisplayName("Son Değişiklik Yapan")]

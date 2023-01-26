@@ -13,8 +13,8 @@ namespace kuruinsaat.Entity
         {
             //Database.SetInitializer<DataContext>(new CreateDatabaseIfNotExists<DataContext>());
 
-            //Database.SetInitializer<DataContext>(new DropCreateDatabaseIfModelChanges<DataContext>());
-            Database.SetInitializer<DataContext>(new DataInitializer());
+            Database.SetInitializer<DataContext>(new DropCreateDatabaseIfModelChanges<DataContext>());
+            //Database.SetInitializer<DataContext>(new DataInitializer());
             //Database.SetInitializer<DataContext>(new DropCreateDatabaseAlways<DataContext>());
             //Database.SetInitializer<SchoolDBContext>(new SchoolDBInitializer());
         }
@@ -26,12 +26,7 @@ namespace kuruinsaat.Entity
         public DbSet<ElementType> ElementTypes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Proje>()
-            //    .HasRequired(m => m.Ekleyen)
-            //    .WithMany(t => t.e)
-            //    .HasForeignKey(m => m.EkleyenId)
-            //    .WillCascadeOnDelete(false);
-
+            
             base.OnModelCreating(modelBuilder);
         }
     }

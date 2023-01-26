@@ -136,6 +136,8 @@
     <Compile Include="Controllers\AnasayfaController.cs" />
     <Compile Include="Controllers\HelperController.cs" />
     <Compile Include="Controllers\IletisimController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="Controllers\YonetimController.cs" />
     <Compile Include="Entity\DataContext.cs" />
     <Compile Include="Entity\DataInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -522,6 +524,9 @@
     <Content Include="Sources\constructo-master\scss\_testmonial.scss" />
     <Content Include="Sources\constructo-master\scss\_varriable.scss" />
     <Content Include="Views\Iletisim\Iletisim.cshtml" />
+    <Content Include="Views\Yonetim\Index.cshtml" />
+    <Content Include="Views\Security\Login.cshtml" />
+    <Content Include="Views\Shared\_AdminLayoutPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

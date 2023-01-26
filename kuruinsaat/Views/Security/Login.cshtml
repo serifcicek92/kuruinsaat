@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="height:100vh;">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Giriş Formu</h2>
+                        @ViewBag.Mesaj
+                        @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <input name="KullaniciAdi" type="text" placeholder="Kullanıcı Adı" />
+                            </div>
+                            <div class="form-group">
+                                <input name="Parola" type="password" placeholder="Parola" />
+                            </div>
+                            <input type="submit" value="Login" class="btn btn-primary" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer_end  -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/javascripts")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</body>
+</html>
