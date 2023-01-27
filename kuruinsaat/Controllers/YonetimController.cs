@@ -6,12 +6,22 @@ using System.Web.Mvc;
 
 namespace kuruinsaat.Controllers
 {
+    [Authorize]
     public class YonetimController : Controller
     {
         // GET: Yonetim
-        [Authorize]
+        
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult ProjeEkle() {
+
+            return View();
+        }
+
+        public ActionResult ProjeList() {
             return View();
         }
     }

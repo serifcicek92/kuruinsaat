@@ -1,0 +1,100 @@
+﻿@model IEnumerable<kuruinsaat.Models.Proje>
+
+@{
+    ViewBag.Title = "ProjeList";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>ProjeList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlokAdedi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToplamKonutSayisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArsaAlani)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KullanilabilirAlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeslimTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EkleyenId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EklemeZamani)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuncelleyenId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Guncellemezamani)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aktif)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlokAdedi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToplamKonutSayisi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArsaAlani)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullanilabilirAlan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeslimTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EkleyenId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EklemeZamani)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuncelleyenId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Guncellemezamani)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aktif)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

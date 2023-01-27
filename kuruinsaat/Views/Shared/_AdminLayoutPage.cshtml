@@ -6,10 +6,95 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>@ViewBag.Title</title>
     <meta name="description" content="@ViewBag.description">
+
+    <link href="~/Content/plugins/jqvmap/css/jqvmap.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/chartist/css/chartist.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="~/Content/admin/style.css" rel="stylesheet" />
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+    <link href="~/Content/plugins/summernote/summernote.css" rel="stylesheet" />
+
 </head>
 <body>
-    <div>
+    <!--*******************
+        Preloader start
+    ********************-->
+    @Html.Partial("~/Views/Yonetim/Partials/_PreloaderPartials.cshtml");
+    <!--*******************
+        Preloader end
+    ********************-->
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+        <!--**********************************
+    Nav header start
+    ***********************************-->
+        @Html.Partial("~/Views/Yonetim/Partials/_NavHeaderPartial.cshtml")
+        <!--**********************************
+    Nav header end
+    ***********************************-->
+        <!--**********************************
+        Chat box start
+    ***********************************-->
+        @Html.Partial("~/Views/Yonetim/Partials/_Chatbox.cshtml")
+        <!--**********************************
+        Chat box End
+    ***********************************-->
+        <!--**********************************
+        Header menu start
+    ***********************************-->
+        @Html.Partial("~/Views/Yonetim/Partials/_HeaderPartial.cshtml")
+        <!--**********************************
+        Header menu end ti-comment-alt
+    ***********************************-->
+        <!--**********************************
+        Sidebar start
+    ***********************************-->
+        @Html.Partial("~/Views/Yonetim/Partials/_Sidebar.cshtml")
+        <!--**********************************
+        Sidebar end
+    ***********************************-->
+        <!-- Content -->
         @RenderBody()
     </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+
+    <script src="~/Content/plugins/global/global.min.js"></script>
+    <script src="~/Content/plugins/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="~/Content/plugins/chart.js/Chart.bundle.min.js"></script>
+    <script src="~/Scripts/admin/custom.min.js"></script>
+    <script src="~/Scripts/admin/deznav-init.js"></script>
+    <script src="~/Content/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="~/Content/plugins/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="~/Content/plugins/apexchart/apexchart.js"></script>
+    <script src="~/Content/plugins/peity/jquery.peity.min.js"></script>
+    <script src="~/Scripts/admin/dashboard/dashboard-1.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+
+
+
+    <script>
+        (function ($) {
+
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+        })(jQuery);
+    </script>
 </body>
 </html>
