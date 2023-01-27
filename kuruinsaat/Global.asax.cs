@@ -21,6 +21,8 @@ namespace kuruinsaat
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
            // Database.SetInitializer<DataContext>(new DataInitializer());
+           
         }
+        
     }
 }

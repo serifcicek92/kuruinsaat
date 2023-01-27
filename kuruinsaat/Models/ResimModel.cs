@@ -14,6 +14,7 @@ namespace kuruinsaat.Models
         public string Title { get; set; }
         public string link { get; set; }
         public int ElementTypeId { get; set; }
+        public string UUID { get; set; }
         public int EkleyenId { get; set; }
         //public Kullanici Ekleyen { get; set; }
         public DateTime EklemeZamani { get; set; }

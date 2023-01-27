@@ -26,6 +26,7 @@ namespace kuruinsaat.Controllers
             if (kullanicidb != null)
             {
                 FormsAuthentication.SetAuthCookie(kullanici.KullaniciAdi, false);
+                System.Web.HttpContext.Current.Session.Add("Kullanici", kullanicidb);
                 return RedirectToAction("Index", "Yonetim");
             }
             else
@@ -48,8 +49,6 @@ namespace kuruinsaat.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
                 return RedirectToAction("Index");
             }
             catch
@@ -58,11 +57,7 @@ namespace kuruinsaat.Controllers
             }
         }
 
-        // GET: Security/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+      
 
         // POST: Security/Edit/5
         [HttpPost]

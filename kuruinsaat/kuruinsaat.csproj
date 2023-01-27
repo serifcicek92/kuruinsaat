@@ -2485,6 +2485,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\Images\projeler\" />
+    <Folder Include="Assets\Images\Uploads\" />
     <Folder Include="Views\Helper\" />
   </ItemGroup>
   <ItemGroup>
