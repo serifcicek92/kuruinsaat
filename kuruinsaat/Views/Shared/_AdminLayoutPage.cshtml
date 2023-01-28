@@ -14,7 +14,7 @@
     <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
     <link href="~/Content/plugins/summernote/summernote.css" rel="stylesheet" />
-
+    <link href="~/Content/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 </head>
 <body>
     <!--*******************
@@ -75,7 +75,8 @@
     <script src="~/Content/plugins/peity/jquery.peity.min.js"></script>
     <script src="~/Scripts/admin/dashboard/dashboard-1.js"></script>
     <script src="~/Scripts/jquery.dataTables.min.js"></script>
-
+    <script src="~/Content/plugins/moment/moment.min.js"></script>
+    <script src="~/Content/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 
 
     <script>
@@ -95,6 +96,12 @@
             });
 
         })(jQuery);
+
+        $(function () {
+
+            $('#datepicker').datetimepicker();
+
+        });
     </script>
 </body>
 </html>

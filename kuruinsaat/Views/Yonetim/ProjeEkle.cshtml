@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "ProjeEkle";
     Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+    
 }
 
 <div class="content-body">
@@ -47,7 +48,7 @@
                                             foreach (var item in ViewBag.resimler)
                                             {
                                                 <div role="tabpanel" class="tab-pane fade @(item.ResimYolu == ViewBag.resimler[0].ResimYolu ? " active show" : "")" id="x@(item.Id)">
-                                                    <img class="img-fluid" src="assets/images/products/@(item.ResimYolu)" alt="">
+                                                    <img class="img-fluid" src="~/Assets/images/Uploads/@(item.ResimYolu)" alt="">
                                                 </div>
                                             }
                                         }
@@ -71,7 +72,7 @@
                                                 {
                                                     <li role="presentation" @(item.ResimYolu == ViewBag.resimler[0].ResimYolu ? " class= \"show\"" : "")>
                                                         <a href="#x@(item.Id)" role="tab" data-toggle="tab" @(item.ResimYolu == ViewBag.resimler[0].ResimYolu ? " class=\"show\" aria-selected=\"true\"" : "")>
-                                                            <img class="img-fluid" src="assets/images/products/thump_@(item.ResimYolu)" alt="" width="50">
+                                                            <img class="img-fluid" src="~/Assets/images/Uploads/thump_@(item.ResimYolu)" alt="" width="50">
                                                         </a>
                                                     </li>
                                                 }
@@ -90,74 +91,75 @@
 
                             <div class="col-xl-9 col-sm-12">
                                 <div class="product-detail-content">
-                                    <!--Product details-->
-                                    @using (Html.BeginForm("ProjeEkle", "Yonetim", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    <!--Projeler details-->
+
+                                    @using (Html.BeginForm(Model != null && Model.Id!=null ? "ProjeDuzenle/"+Model.Id : "ProjeEkle", "Yonetim", FormMethod.Post, new { enctype = "multipart/form-data" }))
                                     {
-                                        <div class="new-arrival-content pr">
-                                            <hr />
-                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                            <!-- Product Title -->
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.Adi, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-sm-3">
-                                                    @Html.EditorFor(model => model.Adi, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.Adi, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-                                            <!-- Product Category -->
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.BlokAdedi, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-sm-3">
-                                                    @Html.EditorFor(model => model.BlokAdedi, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.BlokAdedi, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-                                            <!-- Product Code -->
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.ToplamKonutSayisi, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-sm-3">
-                                                    @Html.EditorFor(model => model.ToplamKonutSayisi, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.ToplamKonutSayisi, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-                                            <!-- Tax -->
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.ArsaAlani, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-sm-2">
-                                                    @Html.EditorFor(model => model.ArsaAlani, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.ArsaAlani, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-                                            <!-- Product Price -->
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.KullanilabilirAlan, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-sm-2">
-                                                    @Html.EditorFor(model => model.KullanilabilirAlan, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.KullanilabilirAlan, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <!-- Product Price -->
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.TeslimTarihi, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-sm-2">
-                                                    @Html.EditorFor(model => model.TeslimTarihi, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.TeslimTarihi, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                @Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                <div class="col-sm-2">
-                                                    @Html.EditorFor(model => model.Adres, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-
-                                            <div class="shopping-cart mt-3 text-right">
-                                                <button type="submit" class="btn btn-success btn-lg" href="#"><i class="fa fa-check mr-2"></i>Kaydet</button>
+                                    <div class="new-arrival-content pr">
+                                        <hr />
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <!-- Proje Adı -->
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Adi, htmlAttributes: new { @class = "control-label col-md-3" })
+                                            <div class="col-sm-5">
+                                                @Html.EditorFor(model => model.Adi, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Adi, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
+                                        <!-- Blok Adedi -->
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.BlokAdedi, htmlAttributes: new { @class = "control-label col-md-3" })
+                                            <div class="col-sm-5">
+                                                @Html.EditorFor(model => model.BlokAdedi, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.BlokAdedi, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <!-- Toplam Konut Sayısı -->
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.ToplamKonutSayisi, htmlAttributes: new { @class = "control-label col-md-3" })
+                                            <div class="col-sm-5">
+                                                @Html.EditorFor(model => model.ToplamKonutSayisi, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ToplamKonutSayisi, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <!-- Tax -->
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.ArsaAlani, htmlAttributes: new { @class = "control-label col-md-3" })
+                                            <div class="col-sm-2">
+                                                @Html.EditorFor(model => model.ArsaAlani, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ArsaAlani, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <!-- Kullanılabilir Alan -->
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.KullanilabilirAlan, htmlAttributes: new { @class = "control-label col-md-3" })
+                                            <div class="col-sm-2">
+                                                @Html.EditorFor(model => model.KullanilabilirAlan, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.KullanilabilirAlan, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <!-- Teslim Tarihi -->
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.TeslimTarihi, htmlAttributes: new { @class = "control-label col-md-3" })
+                                            <div class="col-sm-5">
+                                                @Html.EditorFor(model => model.TeslimTarihi, new { htmlAttributes = new { @class = "datepicker-default form-control", @id="datepicker" }})
+                                                @Html.ValidationMessageFor(model => model.TeslimTarihi, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label col-md-3" })
+                                            <div class="col-sm-2">
+                                                @Html.EditorFor(model => model.Adres, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="shopping-cart mt-3 text-right">
+                                            <button type="submit" class="btn btn-success btn-lg" href="#"><i class="fa fa-check mr-2"></i>Kaydet</button>
+                                        </div>
+                                    </div>
                                     }
                                 </div>
                             </div>
@@ -191,6 +193,7 @@
 
             let ab = document.querySelector("#tab-content-slide").lastElementChild.innerHTML;
             let a = SendXMLHttpRequest(formData, "ResimYukle", function handle(returnStr, status) {
+                console.log("Dönen Json = " + returnStr);
 
                 const jobj = JSON.parse(returnStr);
                 const tabcontents = document.querySelector("#tab-content");
@@ -201,8 +204,8 @@
 
                 for (let index = 0; index < jobj.length; index++) {
 
-                    contentstr += '<div role="tabpanel" class="tab-pane fade" id="x' + jobj[index]["path"].split('.')[0] + '"><img class="img-fluid" src="assets/images/products/' + jobj[index]["path"] + '" alt=""></div>';
-                    slidestr += '<li role="presentation"><a href="#x' + jobj[index]["path"].split('.')[0] + '" role="tab" data-toggle="tab"><img class="img-fluid" src="assets/images/products/thump_' + jobj[index]["path"] + '" alt="" width="50"></a></li>';
+                    contentstr += '<div role="tabpanel" class="tab-pane fade" id="x' + jobj[index]["ResimYolu"].split('.')[0] + '"><img class="img-fluid" src="/Assets/Images/Uploads/' + jobj[index]["ResimYolu"] + '" alt=""></div>';
+                    slidestr += '<li role="presentation"><a href="#x' + jobj[index]["ThumpResimYolu"].split('.')[0] + '" role="tab" data-toggle="tab"><img class="img-fluid" src="/Assets/Images/Uploads/' + jobj[index]["ThumpResimYolu"] + '" alt="" width="50"></a></li>';
                 }
                 tabcontents.lastElementChild.insertAdjacentHTML('afterend', contentstr);
                 tabcontentslideLast.insertAdjacentHTML('beforebegin', slidestr);
