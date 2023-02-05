@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace kuruinsaat.Controllers
 {
-    [DefaultAction("Hakkimizda")]
+    [DefaultAction("Hakkimizda"),AllowAnonymous]
     public class HakkimizdaController : Controller
     {
         public ActionResult Index()

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace kuruinsaat.Controllers
 {
+    [AllowAnonymous]
     public class AnasayfaController : Controller
     {
         private DataContext db = new DataContext();

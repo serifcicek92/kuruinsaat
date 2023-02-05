@@ -93,7 +93,6 @@ namespace kuruinsaat.Controllers
                 proje.ToplamKonutSayisi = Request["ToplamKonutSayisi"] == null ? proje.ToplamKonutSayisi : Int32.Parse(Request["ToplamKonutSayisi"].ToString());
                 proje.BlokAdedi = Request["BlokAdedi"] == null ? proje.BlokAdedi : Int32.Parse(Request["BlokAdedi"].ToString());
                 proje.TeslimTarihi = Request["TeslimTarihi"] == null ? proje.TeslimTarihi : DateTime.ParseExact(Request["TeslimTarihi"].ToString(), "MM/dd/yyyy h:mm tt", CultureInfo.InvariantCulture);
-                db.Projeler.Add(proje);
                 db.SaveChanges();
                 if (System.Web.HttpContext.Current.Session["RESIMUUID"] != null)
                 {

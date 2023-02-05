@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace kuruinsaat.Controllers
 {
-    [DefaultAction("Iletisim")]
+    [DefaultAction("Iletisim"),AllowAnonymous]
     public class IletisimController : Controller
     {
         // GET: Iletisim
