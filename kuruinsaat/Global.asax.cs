@@ -14,13 +14,16 @@ namespace kuruinsaat
     {
         protected void Application_Start()
         {
-            System.Data.Entity.Database.SetInitializer(new System.Data.Entity.MigrateDatabaseToLatestVersion<Entity.DataContext, Migrations.Configuration>());
+            //System.Data.Entity.Database.SetInitializer(new System.Data.Entity.MigrateDatabaseToLatestVersion<Entity.DataContext, Migrations.Configuration>());
+
+            Database.SetInitializer(new DropCreateDatabaseAlways<DataContext>());
+
             GlobalFilters.Filters.Add(new AuthorizeAttribute());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-           // Database.SetInitializer<DataContext>(new DataInitializer());
+            //Database.SetInitializer(new DataInitializer());
            
         }
         

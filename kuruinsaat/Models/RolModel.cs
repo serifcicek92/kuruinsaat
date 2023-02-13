@@ -15,5 +15,6 @@ namespace kuruinsaat.Models
         [Required,StringLength(50, ErrorMessage ="En Fazla 50 karakterde olmalı")]
         public string RolAdi { get; set; }
         public bool Gecerlimi { get; set; }
+
     }
 }

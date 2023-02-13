@@ -2399,7 +2399,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_choseus.scss */
 .chose_bg_1 {
-  background-image: url(../img/banner/chose_banner.png);
+    background-image: url('../Assets/Videos/videoKapak.png');
 }
 
 /* line 4, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_choseus.scss */
@@ -2439,19 +2439,19 @@ h3 {
 }
 
 /* line 27, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_choseus.scss */
-.chose_us_area .chose_info .icon_video a {
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background: #fff;
-  text-align: center;
-  line-height: 70px;
-  font-size: 25px;
-  color: #F0542C;
-}
+    .chose_us_area .chose_info .icon_video a {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        /* background: #fff;*/
+        text-align: center;
+        line-height: 70px;
+        font-size: 95px;
+        color: #000000;
+    }
 
 /* line 42, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_choseus.scss */
 .contact_us {
@@ -6420,4 +6420,18 @@ h6 {
   font-size: 12px;
 }
 
+
+
+
 /*# sourceMappingURL=style.css.map */
+
+
+
+
+.pdfandpanoramic{
+    position:absolute;
+    top:0px;
+    right:0px;
+    background:rgba(255,255,255,0.5);
+    box-sizing:border-box;
+}

@@ -226,11 +226,9 @@
                 </div>
                 <div class="col-lg-5 col-md-6">
                     <div class="portfolio-menu">
-                        <button class="active" data-filter="*">Devam Eden</button>
-                        <button data-filter=".cat1">Tamamlanan</button>
-                        @*<button data-filter=".cat2">Vadi</button>
-                        <button data-filter=".cat3">Dora</button>
-                        <button data-filter=".cat4">Apartman</button>*@
+                        <button class="active" data-filter="*">Hepsi</button>
+                        <button data-filter=".cat1">Devam Eden</button>
+                        <button data-filter=".cat2">Tamamlanan</button>
                     </div>
                 </div>
             </div>
@@ -239,175 +237,240 @@
     <div>
         @foreach (var item in Model)
         {
-            <text>element id =</text> @(item.ResimYolu)
+            @*<text>element id =</text> @(item.ResimYolu)*@
         }
     </div>
     <div class="container-fluid p-0">
         <div class="row grid no-gutters">
-            <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat1">
-                <div class="single_gallery">
-                    <div class="thumb">
-                        <img src="~/Assets/Images/projeler/@(Model.First().ResimYolu)" alt="">
+
+            @{
+                foreach (var item in ViewBag.DevamEdenProjeler)
+                {
+                    <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat1">
+                                    <div class="single_gallery">
+                                        <div class="thumb">
+                                            @if (Model.Where(x => x.ElementTypeNo == 1 && x.ElementTypeId == item.Id).Count() > 0)
+                                            {
+                                                <img src="~/Assets/Images/Uploads/@(Model.Where(x=>x.ElementTypeNo==1 && x.ElementTypeId==item.Id).First().ResimYolu)" alt="">
+
+                                            }
+                                            else
+                                            {
+                                                <img src="~/Assets/Images/Uploads/xxx.jpg" width="500" height="500" alt="">
+                                            }
+                                        </div>
+                                        <div class="gallery_hover">
+                                            <div class="hover_inner d-flex align-items-center justify-content-between">
+                                                <h3>@item.Adi</h3>
+                                                <div class="icon">
+                                                    <a href="project_details.html">
+                                                        <i class="ti-angle-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pdfandpanoramic d-flex m-0 p-0">
+                                            <div class="row d-flex justify-content-center text-center p-0 m-0">
+                                                <a href="#">
+                                                    <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/pdficon.png" width="35" height="35" /></div>
+                                                    <div class="col-12 p-0 m-0">Pdf</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="pdfandpanoramic d-flex mr-5 p-0">
+                                            <div class="row d-flex justify-content-center text-center p-0 m-0">
+                                                <a href="#">
+                                                    <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/360-degree.png" width="35" height="35" /></div>
+                                                    <div class="col-12 p-0 m-0">360°</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                     </div>
-                    <div class="gallery_hover">
-                        <div class="hover_inner d-flex align-items-center justify-content-between">
-                            <h3>Maintenance & Repair</h3>
-                            <div class="icon">
-                                <a href="project_details.html">
-                                    <i class="ti-angle-right"></i>
-                                </a>
+                }
+
+                foreach (var item in ViewBag.TamamlananProjeler)
+                {
+                    <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat2">
+                        <div class="single_gallery">
+                            <div class="thumb">
+                                @if (Model.Where(x => x.ElementTypeNo == 1 && x.ElementTypeId == item.Id).Count() > 0)
+                                {
+                                    <img src="~/Assets/Images/Uploads/@(Model.Where(x=>x.ElementTypeNo==1 && x.ElementTypeId==item.Id).First().ResimYolu)" alt="">
+
+                                }
+                                else
+                                {
+                                    <img src="~/Assets/Images/Uploads/xxx.jpg" width="500" height="500" alt="">
+                                }
+                            </div>
+                            <div class="gallery_hover">
+                                <div class="hover_inner d-flex align-items-center justify-content-between">
+                                    <h3>@item.Adi</h3>
+                                    <div class="icon">
+                                        <a href="project_details.html">
+                                            <i class="ti-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pdfandpanoramic d-flex m-0 p-0">
+                                <div class="row d-flex justify-content-center text-center p-0 m-0">
+                                    <a href="#">
+                                        <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/pdficon.png" width="35" height="35" /></div>
+                                        <div class="col-12 p-0 m-0">Pdf</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pdfandpanoramic d-flex mr-5 p-0">
+                                <div class="row d-flex justify-content-center text-center p-0 m-0">
+                                    <a href="#">
+                                        <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/360-degree.png" width="35" height="35" /></div>
+                                        <div class="col-12 p-0 m-0">360°</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            }
+
+            @*<div class="col-xl-3 col-lg-3 col-md-6 grid-item cat2">
+                    <div class="single_gallery">
+                        <div class="thumb">
+                            <img src="img/gallery/3.png" alt="">
+                        </div>
+                        <div class="gallery_hover">
+                            <div class="hover_inner d-flex align-items-center justify-content-between">
+                                <h3>Maintenance & Repair</h3>
+                                <div class="icon">
+                                    <a href="project_details.html">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat3">
-                <div class="single_gallery">
-                    <div class="thumb">
-                        <img src="img/gallery/2.png" alt="">
-                    </div>
-                    <div class="gallery_hover">
-                        <div class="hover_inner d-flex align-items-center justify-content-between">
-                            <h3>Maintenance & Repair</h3>
-                            <div class="icon">
-                                <a href="project_details.html">
-                                    <i class="ti-angle-right"></i>
-                                </a>
+                <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat1 cat3">
+                    <div class="single_gallery">
+                        <div class="thumb">
+                            <img src="img/gallery/4.png" alt="">
+                        </div>
+                        <div class="gallery_hover">
+                            <div class="hover_inner d-flex align-items-center justify-content-between">
+                                <h3>Maintenance & Repair</h3>
+                                <div class="icon">
+                                    <a href="project_details.html">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat2">
-                <div class="single_gallery">
-                    <div class="thumb">
-                        <img src="img/gallery/3.png" alt="">
-                    </div>
-                    <div class="gallery_hover">
-                        <div class="hover_inner d-flex align-items-center justify-content-between">
-                            <h3>Maintenance & Repair</h3>
-                            <div class="icon">
-                                <a href="project_details.html">
-                                    <i class="ti-angle-right"></i>
-                                </a>
+                <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat2 cat3 cat4">
+                    <div class="single_gallery">
+                        <div class="thumb">
+                            <img src="img/gallery/5.png" alt="">
+                        </div>
+                        <div class="gallery_hover">
+                            <div class="hover_inner d-flex align-items-center justify-content-between">
+                                <h3>Maintenance & Repair</h3>
+                                <div class="icon">
+                                    <a href="project_details.html">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat1 cat3">
-                <div class="single_gallery">
-                    <div class="thumb">
-                        <img src="img/gallery/4.png" alt="">
-                    </div>
-                    <div class="gallery_hover">
-                        <div class="hover_inner d-flex align-items-center justify-content-between">
-                            <h3>Maintenance & Repair</h3>
-                            <div class="icon">
-                                <a href="project_details.html">
-                                    <i class="ti-angle-right"></i>
-                                </a>
+                <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat1 cat2">
+                    <div class="single_gallery">
+                        <div class="thumb">
+                            <img src="img/gallery/6.png" alt="">
+                        </div>
+                        <div class="gallery_hover">
+                            <div class="hover_inner d-flex align-items-center justify-content-between">
+                                <h3>Maintenance & Repair</h3>
+                                <div class="icon">
+                                    <a href="project_details.html">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat2 cat3 cat4">
-                <div class="single_gallery">
-                    <div class="thumb">
-                        <img src="img/gallery/5.png" alt="">
-                    </div>
-                    <div class="gallery_hover">
-                        <div class="hover_inner d-flex align-items-center justify-content-between">
-                            <h3>Maintenance & Repair</h3>
-                            <div class="icon">
-                                <a href="project_details.html">
-                                    <i class="ti-angle-right"></i>
-                                </a>
+                <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat4 cat1">
+                    <div class="single_gallery">
+                        <div class="thumb">
+                            <img src="img/gallery/7.png" alt="">
+                        </div>
+                        <div class="gallery_hover">
+                            <div class="hover_inner d-flex align-items-center justify-content-between">
+                                <h3>Maintenance & Repair</h3>
+                                <div class="icon">
+                                    <a href="project_details.html">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat1 cat2">
-                <div class="single_gallery">
-                    <div class="thumb">
-                        <img src="img/gallery/6.png" alt="">
-                    </div>
-                    <div class="gallery_hover">
-                        <div class="hover_inner d-flex align-items-center justify-content-between">
-                            <h3>Maintenance & Repair</h3>
-                            <div class="icon">
-                                <a href="project_details.html">
-                                    <i class="ti-angle-right"></i>
-                                </a>
+                <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat1 cat2 cat3 cat4">
+                    <div class="single_gallery">
+                        <div class="thumb">
+                            <img src="img/gallery/8.png" alt="">
+                        </div>
+                        <div class="gallery_hover">
+                            <div class="hover_inner d-flex align-items-center justify-content-between">
+                                <h3>Maintenance & Repair</h3>
+                                <div class="icon">
+                                    <a href="project_details.html">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat4 cat1">
-                <div class="single_gallery">
-                    <div class="thumb">
-                        <img src="img/gallery/7.png" alt="">
-                    </div>
-                    <div class="gallery_hover">
-                        <div class="hover_inner d-flex align-items-center justify-content-between">
-                            <h3>Maintenance & Repair</h3>
-                            <div class="icon">
-                                <a href="project_details.html">
-                                    <i class="ti-angle-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat1 cat2 cat3 cat4">
-                <div class="single_gallery">
-                    <div class="thumb">
-                        <img src="img/gallery/8.png" alt="">
-                    </div>
-                    <div class="gallery_hover">
-                        <div class="hover_inner d-flex align-items-center justify-content-between">
-                            <h3>Maintenance & Repair</h3>
-                            <div class="icon">
-                                <a href="project_details.html">
-                                    <i class="ti-angle-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </div>*@
         </div>
     </div>
 </div>
 <!-- gallery_area-END -->
 <!-- more_pro_btn_start  -->
-<a href="project.html" class="more_pro_btn">More Projects</a>
+<a href="project.html" class="more_pro_btn">Devamı...</a>
 <!-- more_pro_btn_end  -->
 <!-- chose_us_area start -->
-<div class="chose_us_area chose_bg_1">
+<div class="chose_us_area chose_bg_1" style="margin-top:5px !important">
     <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-lg-6 col-md-8">
-                <div class="chose_info">
-                    <h3>Why Choose Us?</h3>
-                    <p class="lasrge_text">
-                        “Construction is a full service construction company offering building solutions from start
-                        to finish. Our staff has been operating on NYC for ten years.
-                    </p>
-                    <p>
-                        There are many variations of passages of lorem Ipsum available, but the majority have
-                        suffered alteration in some form, by injected.
-                    </p>
-                    <div class="icon_video">
-                        <a class="popup-video" href="https://www.youtube.com/watch?v=Spi1vvZgLXw">
-                            <i class="fa fa-caret-right"></i>
-                        </a>
+        <div class="row justify-content-center">
+            <div class="row">
+                <div class="col-lg-6 col-md-8">
+                    <div class="chose_info">
+                        <div class="icon_video" style="margin-top:-25px !important">
+                            <a class="popup-video" href="~/Assets/Videos/selen%20evler%20video%20(1).mp4">
+                                <video controls="controls" class="popup-video" width="375" height="350" style="display:none">
+                                    <source src="~/Assets/Videos/selen%20evler%20video%20(1).mp4" type="video/mp4" />
+                                </video>
+                                <i class="fa fa-play"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
+                @*<div class="col-lg-6">
+                    <h3>Kuru İnşaat Selenevler Projesi</h3>
+                    <p class="lasrge_text">
+                        “Kuru İnşaat ile yaptığımız bir proje.“
+                    </p>
+                    <p>
+                        Kuru İnşaat selen evler projesi sizlere sunduğumuz harika bir projemiz olarak inşaatlarımız arasında yer almaktadır.
+                    </p>
+                </div>*@
             </div>
         </div>
     </div>

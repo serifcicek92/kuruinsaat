@@ -14,6 +14,10 @@ namespace kuruinsaat.Controllers
         private DataContext db = new DataContext();
         public ActionResult Index()
         {
+            List<Proje> TamamlananProjeler = db.Projeler.Where(x=>x.Tamamlandimi==true).ToList();
+            List<Proje> DevamEdenProjeler = db.Projeler.Where(x=>x.Tamamlandimi==false).ToList();
+            ViewBag.TamamlananProjeler = TamamlananProjeler;
+            ViewBag.DevamEdenProjeler = DevamEdenProjeler;
             List<Resim> resimler =  db.Resimler.ToList();
             return View(resimler);
         }

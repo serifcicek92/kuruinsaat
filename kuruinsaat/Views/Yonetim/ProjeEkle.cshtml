@@ -34,9 +34,20 @@
                             <div class="col-xl-3 ">
                                 <!-- Tab panes -->
                                 <div class="tab-content" id="tab-content">
+                                    <div class="ayarla">
+                                        <a href="#" title="Resimi Ana Sayfada Göster" id="AnasayfadaGoster">
+                                            <img src="~/Assets/Images/helper/showonhomelogo.png" width="20" height="20" />
+                                        </a>
+                                        <a href="#" title="Resimi Kapak Resmi Yap" id="KapakResmiYap">
+                                            <img src="~/Assets/Images/helper/coverlogo.png" width="20" height="20"/>
+                                        </a>
+                                        <a href="#" title="Resimi Sil" id="ResmiSil">
+                                            <img src="~/Assets/Images/helper/closepng.png" width="20" height="20"/>
+                                        </a>
+                                    </div>
 
                                     @{
-                                        if (ViewBag.resimler==null)
+                                        if (ViewBag.resimler==null || ViewBag.resimler.Count == 0)
                                         {
                                             <div role="tabpanel" class="tab-pane fade active show" id="first">
                                                 <img class="img-fluid" src="~/Assets/Images/helper/blankimage_1.jpg" alt="">
@@ -58,7 +69,7 @@
                                     <!-- Nav tabs -->
                                     <ul class="nav slide-item-list mt-3" role="tablist" id="tab-content-slide">
                                         @{
-                                            if (ViewBag.resimler==null)
+                                            if (ViewBag.resimler==null || ViewBag.resimler.Count==0)
                                             {
                                                 <li role="presentation" class="show">
                                                     <a href="#first" role="tab" data-toggle="tab" class="active" aria-selected="true">
@@ -71,7 +82,7 @@
                                                 foreach (var item in ViewBag.resimler)
                                                 {
                                                     <li role="presentation" @(item.ResimYolu == ViewBag.resimler[0].ResimYolu ? " class= \"show\"" : "")>
-                                                        <a href="#x@(item.Id)" role="tab" data-toggle="tab" @(item.ResimYolu == ViewBag.resimler[0].ResimYolu ? " class=\"show\" aria-selected=\"true\"" : "")>
+                                                        <a href="#x@(item.Id)" role="tab" data-toggle="tab" data-ref="@(item.Id)" @(item.ResimYolu == ViewBag.resimler[0].ResimYolu ? Html.Raw(" class=\"show thmpnail\"" + "aria-selected=\"true\"") : Html.Raw("class=\"thmpnail\""))>
                                                             <img class="img-fluid" src="~/Assets/images/Uploads/thump_@(item.ResimYolu)" alt="" width="50">
                                                         </a>
                                                     </li>
@@ -142,25 +153,125 @@
                                         <!-- Teslim Tarihi -->
                                         <div class="form-group row">
                                             @Html.LabelFor(model => model.TeslimTarihi, htmlAttributes: new { @class = "control-label col-md-3" })
-                                            <div class="col-sm-5">
-                                                @Html.EditorFor(model => model.TeslimTarihi, new { htmlAttributes = new { @class = "datepicker-default form-control", @id="datepicker" }})
+                                            <div class="col-sm-3">
+                                                @Html.EditorFor(model => model.TeslimTarihi, new { htmlAttributes = new { @class = "datepicker-default form-control", @id = "datepicker" } })
                                                 @Html.ValidationMessageFor(model => model.TeslimTarihi, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             @Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label col-md-3" })
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-6">
                                                 @Html.EditorFor(model => model.Adres, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
 
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Sira, htmlAttributes: new { @class = "control-label col-md-3" })
+                                            <div class="col-sm-2">
+                                                @Html.EditorFor(model => model.Sira, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Sira, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Tamamlandimi, htmlAttributes: new { @class = "control-label col-md-3" })
+                                            <div class="col-sm-2">
+                                                @Html.CheckBoxFor(model => model.Tamamlandimi, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Tamamlandimi, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        @*pdf*@
+                                        <div class="form-group" row>
+                                            <div class="col-sm-5">
+                                                <div class="row">
+                                                    <div class="col-12  file-input-space d-flex file" id="pfdwrap">
+                                                        @{
+                                                            if (ViewBag.dosyalarPdf != null)
+                                                            {
+                                                                foreach (var item in ViewBag.dosyalarPdf)
+                                                                {
+                                                                    <a href="DeleteFile?id=@(item.Id)" class="flex-column">
+                                                                        <div class="delete-hover"></div>
+                                                                        <img src="~/Assets/Images/helper/pdficon.png" />
+                                                                        <label>@(item.DosyaYolu)</label>
+                                                                    </a>
+                                                                }
+                                                            }
+                                                        }
+                                                        <a href="javascript:document.querySelector('#pdffile').click();">
+                                                            <img src="~/Assets/Images/helper/pdficon-add.png" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <input type="file" name="pdffile" id="pdffile" accept="application/pdf" hidden />
+                                            </div>
+                                        </div>
+                                        @*panoramic*@
+                                        <div class="form-group" row>
+                                            <div class="col-sm-5">
+                                                <div class="row">
+                                                    <div class="col-12 file-input-space d-flex file" id="panoramicwrap">
+
+                                                        @{
+                                                            if (ViewBag.dosyalarPanorama != null)
+                                                            {
+                                                                foreach (var item in ViewBag.dosyalarPanorama)
+                                                                {
+                                                                    <a href="DeleteFile?id=@(item.Id)" class="flex-column">
+                                                                        <div class="delete-hover"></div>
+                                                                        <img src="~/Assets/Images/helper/360-degree.png" width="48" height="48" />
+                                                                        <label>@(item.DosyaYolu)</label>
+                                                                    </a>
+                                                                }
+
+                                                            }
+                                                        }
+                                                        <a href="javascript:document.querySelector('#panoramicfile').click();" class="flex-column">
+                                                            <img src="~/Assets/Images/helper/360-degree-add.png" width="48" height="48" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <input type="file" name="panoramicfile" id="panoramicfile" accept="image/*" hidden />
+                                            </div>
+                                        </div>
+
+                                        @*Video*@
+                                        <div class="form-group" row>
+                                            <div class="col-sm-5">
+                                                <div class="row">
+                                                    <div class="col-12 file-input-space d-flex file" id="videofilewrap">
+
+                                                        @{
+                                                            if (ViewBag.dosyalarVideo != null)
+                                                            {
+                                                                foreach (var item in ViewBag.dosyalarVideo)
+                                                                {
+                                                                    <a href="DeleteFile?id=@(item.Id)" class="flex-column">
+                                                                        <div class="delete-hover"></div>
+                                                                        <img src="~/Assets/Images/helper/multimedia.png" width="48" height="48" />
+                                                                        <label>@(item.DosyaYolu)</label>
+                                                                    </a>
+                                                                }
+
+                                                            }
+                                                        }
+                                                        <a href="javascript:document.querySelector('#videofile').click();" class="flex-column">
+                                                            <img src="~/Assets/Images/helper/multimedia-add.png" width="48" height="48" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <input type="file" name="videofile" id="videofile" accept="video/mp4,video/x-m4v,video/*" hidden />
+                                            </div>
+                                        </div>
+
+
                                         <div class="shopping-cart mt-3 text-right">
                                             <button type="submit" class="btn btn-success btn-lg" href="#"><i class="fa fa-check mr-2"></i>Kaydet</button>
                                         </div>
                                     </div>
-                                    }
+                                                            }
                                 </div>
                             </div>
                         </div>
@@ -204,8 +315,8 @@
 
                 for (let index = 0; index < jobj.length; index++) {
 
-                    contentstr += '<div role="tabpanel" class="tab-pane fade" id="x' + jobj[index]["ResimYolu"].split('.')[0] + '"><img class="img-fluid" src="/Assets/Images/Uploads/' + jobj[index]["ResimYolu"] + '" alt=""></div>';
-                    slidestr += '<li role="presentation"><a href="#x' + jobj[index]["ThumpResimYolu"].split('.')[0] + '" role="tab" data-toggle="tab"><img class="img-fluid" src="/Assets/Images/Uploads/' + jobj[index]["ThumpResimYolu"] + '" alt="" width="50"></a></li>';
+                    contentstr += '<div role="tabpanel" class="tab-pane fade" id="x' + jobj[index]["Id"] + '"><img class="img-fluid" src="/Assets/Images/Uploads/' + jobj[index]["ResimYolu"] + '" alt=""></div>';
+                    slidestr += '<li role="presentation"><a href="#x' + jobj[index]["Id"] + '" role="tab" data-toggle="tab" data-ref="' + jobj[index]["Id"] + '" class="thmpnail"><img class="img-fluid" src="/Assets/Images/Uploads/' + jobj[index]["ThumpResimYolu"] + '" alt="" width="50"></a></li>';
                 }
                 tabcontents.lastElementChild.insertAdjacentHTML('afterend', contentstr);
                 tabcontentslideLast.insertAdjacentHTML('beforebegin', slidestr);
@@ -213,4 +324,95 @@
 
         }
     });
+
+    //panoramic
+    var panoramicfile = document.querySelector("#panoramicfile");
+    panoramicfile.addEventListener("change", function (event) {
+
+        var formdata = new FormData();
+        formdata.append("panoramicfile[]", panoramicfile.files[0]);
+        formdata.append("type", "1");
+        console.log("dosyaa");
+        console.log(panoramicfile.files);
+
+        const panoramicContentTagLast = document.querySelector("#panoramicwrap").lastElementChild;
+
+        let a = SendXMLHttpRequest(formdata, "DosyaYukle", function handle(returnStr, status) {
+            console.log(returnStr);
+            const jobj = JSON.parse(returnStr);
+            console.log(jobj);
+            let str = "";
+                str += '<a href="DosyaSil/' + jobj["Id"] + '" class="flex-column" title="' + jobj["DosyaYolu"] + '">' +
+                        '<div class="delete-hover"></div >' +
+                        '<img src="/Assets/Images/helper/360-degree.png" width="48" height="48"/>' +
+                        '<label>' + jobj["DosyaYolu"] + '</label>' +
+                      '</a>';
+           
+            console.log(str);
+            panoramicContentTagLast.insertAdjacentHTML('beforebegin', str);
+        });
+    });
+
+    //pdf
+    var pdffile = document.querySelector("#pdffile");
+    pdffile.addEventListener("change", function (event) {
+        var formdata = new FormData();
+        formdata.append("pdffile[]", pdffile.files[0]);
+        formdata.append("type", "2");
+        str = "";
+        let a = SendXMLHttpRequest(formdata, "DosyaYukle", function handle(returnStr, status) {
+            console.log(returnStr);
+            const pfdwrapContentTagLast = document.querySelector("#pfdwrap").lastElementChild;
+            const jobj = JSON.parse(returnStr);
+                str = '<a href="DosyaSil/' + jobj["Id"] + '" class="flex-column" title="' + jobj["DosyaYolu"] + '">' +
+                        '<div class="delete-hover" ></div >' +
+                        '<img src="/Assets/Images/helper/pdficon.png" />' +
+                        '<label>' + jobj["DosyaYolu"] + '</label>' +
+                      '</a>';
+            console.log("str=" + str);
+            pfdwrapContentTagLast.insertAdjacentHTML('beforebegin', str);
+        });
+    });
+
+
+    //pdf
+    var videofile = document.querySelector("#videofile");
+    videofile.addEventListener("change", function (event) {
+        var formdata = new FormData();
+        formdata.append("videofile[]", videofile.files[0]);
+        formdata.append("type", "3");
+        console.log(formdata);
+        str = "";
+        let a = SendXMLHttpRequest(formdata, "DosyaYukle", function handle(returnStr, status) {
+            console.log(returnStr);
+            const pfdwrapContentTagLast = document.querySelector("#videofilewrap").lastElementChild;
+            const jobj = JSON.parse(returnStr);
+            str = '<a href="DosyaSil/' + jobj["Id"] + '" class="flex-column" title="' + jobj["DosyaYolu"] + '">' +
+                '<div class="delete-hover" ></div >' +
+                '<img src="/Assets/Images/helper/multimedia.png" width="48" height="48" />' +
+                '<label>' + jobj["DosyaYolu"] + '</label>' +
+                '</a>';
+            console.log("str=" + str);
+            pfdwrapContentTagLast.insertAdjacentHTML('beforebegin', str);
+        });
+    });
+
+
+    var thmpnails = document.querySelectorAll(".thmpnail");
+    console.log(thmpnails);
+    thmpnails.forEach(function(thmpnail) {
+        thmpnail.addEventListener('click', function () {
+            var imageid = this.dataset.ref;
+            let AnasayfadaGoster = document.querySelector("#AnasayfadaGoster");
+            let KapakResmiYap = document.querySelector("#KapakResmiYap");
+            let ResmiSil = document.querySelector("#ResmiSil");
+
+            AnasayfadaGoster.href = "/Yonetim/AnasayfadaGoster?id=" + imageid;
+            KapakResmiYap.href = "/Yonetim/KapakYap?id=" + imageid;
+            ResmiSil.href = "/Yonetim/ResimSil?id=" + imageid;
+
+        });
+    });
+
+
 </script>

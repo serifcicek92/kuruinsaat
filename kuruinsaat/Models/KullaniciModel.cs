@@ -54,7 +54,5 @@ namespace kuruinsaat.Models
         public DateTime? SonDegisiklikYapan { get; set; }
         public bool Gecerlimi { get; set; }
 
-        
-
     }
 }

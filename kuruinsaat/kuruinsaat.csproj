@@ -143,6 +143,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DosyaModel.cs" />
     <Compile Include="Models\ElementTypeModel.cs" />
     <Compile Include="Models\KullaniciModel.cs" />
     <Compile Include="Models\ProjeModel.cs" />
@@ -152,10 +153,97 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Images\banner\banner1.jpg" />
+    <Content Include="Assets\Images\banner\banner1.png" />
+    <Content Include="Assets\Images\banner\banner2.png" />
+    <Content Include="Assets\Images\banner\banner3.jpg" />
+    <Content Include="Assets\Images\banner\bannereski.jpg" />
+    <Content Include="Assets\Images\helper\360-degree-add.png" />
+    <Content Include="Assets\Images\helper\360-degree.png" />
     <Content Include="Assets\Images\helper\addimage_1.png" />
     <Content Include="Assets\Images\helper\blankimage_1.jpg" />
+    <Content Include="Assets\Images\helper\closepng.png" />
+    <Content Include="Assets\Images\helper\coverlogo.png" />
+    <Content Include="Assets\Images\helper\multimedia-add.png" />
+    <Content Include="Assets\Images\helper\multimedia.png" />
+    <Content Include="Assets\Images\helper\pdficon-add.png" />
+    <Content Include="Assets\Images\helper\pdficon.png" />
+    <Content Include="Assets\Images\helper\showonhomelogo.png" />
     <Content Include="Assets\Images\logo\kuruinsaat.png" />
     <Content Include="Assets\Images\hakkimizda.jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani.jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani[1].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani[2].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani[3].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani[4].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani[5].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani[6].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani[7].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani[8].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-apartmani[9].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora.jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[10].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[11].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[1].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[2].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[3].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[4].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[5].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[6].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[7].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[8].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-dora[9].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-sahil.jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-sahil[1].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[10].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[1].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[2].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[3].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[4].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[5].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[6].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[7].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[8].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-site[9].jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-vadi.jpg" />
+    <Content Include="Assets\Images\projeler\selen-evler-vadi[1].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani.jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani[1].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani[2].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani[3].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani[4].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani[5].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani[6].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani[7].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani[8].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-apartmani[9].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora.jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[10].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[11].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[1].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[2].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[3].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[4].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[5].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[6].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[7].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[8].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-dora[9].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-sahil.jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-sahil[1].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[10].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[1].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[2].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[3].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[4].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[5].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[6].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[7].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[8].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-site[9].jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-vadi.jpg" />
+    <Content Include="Assets\Images\Uploads\selen-evler-vadi[1].jpg" />
+    <Content Include="Assets\Videos\selen evler video %281%29.mp4" />
+    <Content Include="Assets\Videos\videoKapak.png" />
     <Content Include="Content\admin\icons\avasta\css\style.css" />
     <Content Include="Content\admin\icons\avasta\fonts\avasta.svg" />
     <Content Include="Content\admin\icons\feather\activity.svg" />
@@ -2489,8 +2577,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Images\projeler\" />
-    <Folder Include="Assets\Images\Uploads\" />
+    <Folder Include="Assets\Uploads\" />
     <Folder Include="Views\Helper\" />
   </ItemGroup>
   <ItemGroup>

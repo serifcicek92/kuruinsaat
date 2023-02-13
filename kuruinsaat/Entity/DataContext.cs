@@ -11,12 +11,8 @@ namespace kuruinsaat.Entity
     {
         public DataContext() : base("KuruInsaatDatabase")
         {
-            //Database.SetInitializer<DataContext>(new CreateDatabaseIfNotExists<DataContext>());
-
-            Database.SetInitializer<DataContext>(new DropCreateDatabaseIfModelChanges<DataContext>());
-            //Database.SetInitializer<DataContext>(new DataInitializer());
-            //Database.SetInitializer<DataContext>(new DropCreateDatabaseAlways<DataContext>());
-            //Database.SetInitializer<SchoolDBContext>(new SchoolDBInitializer());
+            //Database.SetInitializer<DataContext>(new DropCreateDatabaseIfModelChanges<DataContext>()); //model değiştiğinde yenien oluştur
+            //Database.Initialize(true);
         }
 
         public DbSet<Kullanici> Kullanicilar { get; set; }
@@ -24,10 +20,12 @@ namespace kuruinsaat.Entity
         public DbSet<Proje> Projeler { get; set; }
         public DbSet<Resim> Resimler { get; set; }
         public DbSet<ElementType> ElementTypes { get; set; }
+        public DbSet<Dosya> Dosyalar { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
-            base.OnModelCreating(modelBuilder);
+            //Database.SetInitializer<DataContext>(new DropCreateDatabaseAlways<DataContext>());
+            Database.SetInitializer<DataContext>(new DropCreateDatabaseAlways<DataContext>());
+            //base.OnModelCreating(modelBuilder);
         }
     }
 }

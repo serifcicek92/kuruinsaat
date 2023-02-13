@@ -18,6 +18,8 @@ namespace kuruinsaat.Models
         public string link { get; set; }
         public int ElementTypeNo { get; set; }
         public int ElementTypeId { get; set; }
+        public int? AnasayfadaGoster { get; set; }
+        public int? KapakYap { get; set; }
         public string UUID { get; set; }
         public int EkleyenId { get; set; }
         //public Kullanici Ekleyen { get; set; }
