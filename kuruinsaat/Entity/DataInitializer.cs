@@ -71,10 +71,10 @@ namespace kuruinsaat.Entity
                 //new Proje(){Id=2,Adi="Vadi",Aktif=1},
                 //new Proje(){Id=3,Adi="Dora",Aktif=1},
                 //new Proje(){Id=4,Adi="Apt",Aktif=1}
-                new Proje(){Adi="Site",Aktif=1, Tamamlandimi=true},
-                new Proje(){Adi="Vadi",Aktif=1, Tamamlandimi=true},
-                new Proje(){Adi="Dora",Aktif=1, Tamamlandimi=false},
-                new Proje(){Adi="Apt",Aktif=1, Tamamlandimi=false}
+                new Proje(){Adi="Site",Aktif=1, Tamamlandimi=true, EklemeZamani= DateTime.Now},
+                new Proje(){Adi="Vadi",Aktif=1, Tamamlandimi=true, EklemeZamani= DateTime.Now},
+                new Proje(){Adi="Dora",Aktif=1, Tamamlandimi=false, EklemeZamani= DateTime.Now},
+                new Proje(){Adi="Apt",Aktif=1, Tamamlandimi=false, EklemeZamani= DateTime.Now}
 
 
             };
@@ -100,7 +100,7 @@ namespace kuruinsaat.Entity
             var resimler = new List<Resim>()
             {
                 
-                new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Site").First().Id, ResimYolu="selen-evler-site[1].jpg",Aktif=1},
+                new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Site").First().Id, ResimYolu="selen-evler-site[1].jpg",Aktif=1, KapakYap = 1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Site").First().Id, ResimYolu="selen-evler-site[2].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Site").First().Id, ResimYolu="selen-evler-site[3].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Site").First().Id, ResimYolu="selen-evler-site[4].jpg",Aktif=1},
@@ -110,9 +110,9 @@ namespace kuruinsaat.Entity
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Site").First().Id, ResimYolu="selen-evler-site[8].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Site").First().Id, ResimYolu="selen-evler-site[9].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Site").First().Id, ResimYolu="selen-evler-site[10].jpg",Aktif=1},
-                new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Vadi").First().Id, ResimYolu="selen-evler-vadi.jpg",Aktif=1},
+                new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Vadi").First().Id, ResimYolu="selen-evler-vadi.jpg",Aktif=1, KapakYap = 1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId =  projects.Where(x=>x.Adi=="Vadi").First().Id, ResimYolu="selen-evler-vadi[1].jpg",Aktif=1},
-                new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId =  projects.Where(x=>x.Adi=="Dora").First().Id, ResimYolu="selen-evler-dora.jpg",Aktif=1},
+                new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId =  projects.Where(x=>x.Adi=="Dora").First().Id, ResimYolu="selen-evler-dora.jpg",Aktif=1, KapakYap = 1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Dora").First().Id, ResimYolu="selen-evler-dora[1].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Dora").First().Id, ResimYolu="selen-evler-dora[2].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Dora").First().Id, ResimYolu="selen-evler-dora[3].jpg",Aktif=1},
@@ -123,7 +123,7 @@ namespace kuruinsaat.Entity
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Dora").First().Id, ResimYolu="selen-evler-dora[8].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Dora").First().Id, ResimYolu="selen-evler-dora[9].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Dora").First().Id, ResimYolu="selen-evler-dora[10].jpg",Aktif=1},
-                new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Apt").First().Id, ResimYolu="selen-evler-apartmani.jpg",Aktif=1},
+                new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Apt").First().Id, ResimYolu="selen-evler-apartmani.jpg",Aktif=1, KapakYap = 1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Apt").First().Id, ResimYolu="selen-evler-apartmani[1].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Apt").First().Id, ResimYolu="selen-evler-apartmani[2].jpg",Aktif=1},
                 new Resim(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, ElementTypeId = projects.Where(x=>x.Adi=="Apt").First().Id, ResimYolu="selen-evler-apartmani[3].jpg",Aktif=1},
@@ -145,6 +145,17 @@ namespace kuruinsaat.Entity
 
 
             //base.Seed(context);
+
+            var dosyalar = new List<Dosya>()
+            {
+                new Dosya(){EklemeZamani=DateTime.Now,Guncellemezamani=DateTime.Now,ElementTypeNo=1, Type=1, ElementTypeId = projects.Where(x=>x.Adi=="Site").First().Id,DosyaYolu="lok-yiu-cheung-o6k0ZH1eOwg-unsplash.jpg"}
+            };
+            foreach (var ekle in dosyalar)
+            {
+                context.Dosyalar.Add(ekle);
+            }
+            context.SaveChanges();
+
         }
     }
 }

@@ -1,0 +1,100 @@
+﻿@model IEnumerable<kuruinsaat.Models.Resim>
+@{
+    ViewBag.Title = "DevamEden";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Devam Eden Projeler</h3>
+                    <p><a href="index.html">Projeler</a> / Devam Eden Projelerimiz</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- gallery_area-START -->
+<div class="gallery_area add_padding">
+    <div class="container">
+        <div class="gallery_nav">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="portfolio-menu mb-50 text-center">
+                        <button class="active" data-filter="*">Devam Eden Projeler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-0 pb-5">
+        <div class="row grid no-gutters">
+
+            @{
+                foreach (var item in ViewBag.DevamEdenProjeler)
+                {
+                    <div class="col-xl-3 col-lg-3 col-md-6 grid-item">
+                                    <div class="single_gallery">
+                                        <div class="thumb">
+                                            @if (Model.Where(x => x.ElementTypeNo == 1 && x.ElementTypeId == item.Id).Count() > 0)
+                                            {
+                                                <img src="~/Assets/Images/Uploads/@(Model.Where(x=>x.ElementTypeNo==1 && x.ElementTypeId==item.Id).First().ResimYolu)" alt="">
+
+                                            }
+                                            else
+                                            {
+                                                <img src="~/Assets/Images/Uploads/xxx.jpg" width="500" height="500" alt="">
+                                            }
+                                        </div>
+                                        <div class="gallery_hover">
+                                            <div class="hover_inner d-flex align-items-center justify-content-between">
+                                                <h3>@item.Adi</h3>
+                                                <div class="icon">
+                                                    <a href="/Projeler/Proje/@item.Id">
+                                                        <i class="ti-angle-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @{List<kuruinsaat.Models.Dosya> dosyalar = ViewBag.Dosyalar;
+                                            var pdfler = dosyalar.Where(x => x.Type == 2 && x.ElementTypeNo == 1 && x.ElementTypeId == item.Id).ToList();
+                                            var panoramic = dosyalar.Where(x => x.Type == 1 && x.ElementTypeNo == 1 && x.ElementTypeId == item.Id).ToList();}
+                                        @{ foreach (var pdf in pdfler)
+                                            {
+                                                <div class="pdfandpanoramic d-flex m-0 p-0">
+                                                    <div class="row d-flex justify-content-center text-center p-0 m-0">
+                                                        <a href="~/Assets/Uploads/@pdf.DosyaYolu">
+                                                            <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/pdficon.png" width="35" height="35" /></div>
+                                                            <div class="col-12 p-0 m-0">Pdf</div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+
+                                        @{
+                                            foreach (var panora in panoramic)
+                                            {
+                                                <div class="pdfandpanoramic d-flex mr-5 p-0">
+                                                    <div class="row d-flex justify-content-center text-center p-0 m-0">
+                                                        <a href="/Projeler/Panorama/@panora.Id">
+                                                            <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/360-degree.png" width="35" height="35" /></div>
+                                                            <div class="col-12 p-0 m-0">360°</div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</div>
+<!-- gallery_area-END -->

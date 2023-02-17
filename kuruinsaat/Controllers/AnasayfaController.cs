@@ -16,6 +16,8 @@ namespace kuruinsaat.Controllers
         {
             List<Proje> TamamlananProjeler = db.Projeler.Where(x=>x.Tamamlandimi==true).ToList();
             List<Proje> DevamEdenProjeler = db.Projeler.Where(x=>x.Tamamlandimi==false).ToList();
+            List<Dosya> Dosyalar = db.Dosyalar.ToList();
+            ViewBag.Dosyalar = Dosyalar;
             ViewBag.TamamlananProjeler = TamamlananProjeler;
             ViewBag.DevamEdenProjeler = DevamEdenProjeler;
             List<Resim> resimler =  db.Resimler.ToList();

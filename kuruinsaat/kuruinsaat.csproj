@@ -135,6 +135,7 @@
     <Compile Include="Controllers\AnasayfaController.cs" />
     <Compile Include="Controllers\HelperController.cs" />
     <Compile Include="Controllers\IletisimController.cs" />
+    <Compile Include="Controllers\ProjelerController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\YonetimController.cs" />
     <Compile Include="Entity\DataContext.cs" />
@@ -206,6 +207,7 @@
     <Content Include="Assets\Images\projeler\selen-evler-site[9].jpg" />
     <Content Include="Assets\Images\projeler\selen-evler-vadi.jpg" />
     <Content Include="Assets\Images\projeler\selen-evler-vadi[1].jpg" />
+    <Content Include="Assets\Images\Uploads\lok-yiu-cheung-o6k0ZH1eOwg-unsplash.jpg" />
     <Content Include="Assets\Images\Uploads\selen-evler-apartmani.jpg" />
     <Content Include="Assets\Images\Uploads\selen-evler-apartmani[1].jpg" />
     <Content Include="Assets\Images\Uploads\selen-evler-apartmani[2].jpg" />
@@ -2279,10 +2281,12 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\nice-select.min.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\panolens.min.js" />
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\scrollIt.js" />
     <Content Include="Scripts\slick.min.js" />
+    <Content Include="Scripts\three.min.js" />
     <Content Include="Scripts\vendor\jquery-1.12.4.min.js" />
     <Content Include="Scripts\vendor\modernizr-3.5.0.min.js" />
     <Content Include="Scripts\waypoints.min.js" />
@@ -2574,6 +2578,11 @@
     <Content Include="Views\Yonetim\Partials\_Sidebar.cshtml" />
     <Content Include="Views\Yonetim\ProjeEkle.cshtml" />
     <Content Include="Views\Yonetim\ProjeList.cshtml" />
+    <Content Include="Views\Projeler\DevamEden.cshtml" />
+    <Content Include="Views\Projeler\Tamamlanan.cshtml" />
+    <Content Include="Views\Projeler\ProjeDetay.cshtml" />
+    <Content Include="Views\Projeler\Panorama.cshtml" />
+    <Content Include="Views\Projeler\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
