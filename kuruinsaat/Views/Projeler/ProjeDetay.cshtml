@@ -138,31 +138,33 @@
             @{List<kuruinsaat.Models.Dosya> dosyalar = ViewBag.Dosyalar;
                 var pdfler = dosyalar.Where(x => x.Type == 2).ToList();
                 var panoramic = dosyalar.Where(x => x.Type == 1).ToList();}
-            @{ foreach (var pdf in pdfler)
-                {
-                    <div class="d-flex m-0 p-0">
-                        <div class="row d-flex justify-content-center text-center p-0 m-0">
+            @{
+                <div class="d-flex m-0 p-0">
+                    <div class="row d-flex justify-content-center text-center p-0 m-0">
+                        @foreach (var pdf in pdfler)
+                        {
                             <a href="~/Assets/Uploads/@pdf.DosyaYolu">
                                 <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/pdficon.png" width="35" height="35" /></div>
                                 <div class="col-12 p-0 m-0">Pdf</div>
                             </a>
-                        </div>
+                        }
                     </div>
-                }
+                </div>
             }
 
             @{
-                foreach (var panora in panoramic)
-                {
-                    <div class="d-flex mr-5 p-0">
-                        <div class="row d-flex justify-content-center text-center p-0 m-0">
+
+                <div class="d-flex mr-5 p-0">
+                    <div class="row d-flex justify-content-center text-center p-0 m-0">
+                        @foreach (var panora in panoramic)
+                        {
                             <a href="/Projeler/Panorama/@panora.Id">
                                 <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/360-degree.png" width="35" height="35" /></div>
                                 <div class="col-12 p-0 m-0">360°</div>
                             </a>
-                        </div>
+                        }
                     </div>
-                }
+                </div>
             }
         </div>
     </div>
@@ -188,8 +190,8 @@
 </div>
 <!-- contact_us_end -->
 <!-- chose_us_area start -->
-    
-@{  var videolar = dosyalar.Where(x => x.Type == 3).ToList();
+
+@{ var videolar = dosyalar.Where(x => x.Type == 3).ToList();
     foreach (var video in videolar)
     {
         <div class="chose_us_area chose_bg_1" style="margin-top:5px !important">
@@ -214,6 +216,6 @@
             </div>
         </div>
         <!-- chose_us_area end -->
-        }
     }
+}
 }

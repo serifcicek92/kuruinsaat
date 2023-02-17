@@ -252,31 +252,35 @@
                             @{List<kuruinsaat.Models.Dosya> dosyalar = ViewBag.Dosyalar;
                                 var pdfler = dosyalar.Where(x => x.Type == 2 && x.ElementTypeNo == 1 && x.ElementTypeId == item.Id).ToList();
                                 var panoramic = dosyalar.Where(x => x.Type == 1 && x.ElementTypeNo == 1 && x.ElementTypeId == item.Id).ToList();}
-                            @{ foreach (var pdf in pdfler)
-                                {
-                                    <div class="pdfandpanoramic d-flex m-0 p-0">
-                                        <div class="row d-flex justify-content-center text-center p-0 m-0">
+                            @{
+                                <div class="pdfandpanoramic d-flex m-0 p-0">
+                                    <div class="row d-flex justify-content-center text-center p-0 m-0">
+                                        @foreach (var pdf in pdfler)
+                                        {
                                             <a href="~/Assets/Uploads/@pdf.DosyaYolu">
                                                 <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/pdficon.png" width="35" height="35" /></div>
                                                 <div class="col-12 p-0 m-0">Pdf</div>
                                             </a>
-                                        </div>
+                                        }
+
                                     </div>
-                                }
+                                </div>
                             }
 
                             @{
-                                foreach (var panora in panoramic)
-                                {
-                                    <div class="pdfandpanoramic d-flex mr-5 p-0">
-                                        <div class="row d-flex justify-content-center text-center p-0 m-0">
-                                            <a href="/Projeler/Panorama/@panora.Id">
-                                                <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/360-degree.png" width="35" height="35" /></div>
-                                                <div class="col-12 p-0 m-0">360°</div>
-                                            </a>
-                                        </div>
+
+                                <div class="pdfandpanoramic d-flex mr-5 p-0">
+                                    <div class="row d-flex justify-content-center text-center p-0 m-0">
+                                        @foreach (var panora in panoramic)
+                                        {
+                                        <a href="/Projeler/Panorama/@panora.Id">
+                                            <div class="col-12 p-0 m-0"><img src="~/Assets/Images/helper/360-degree.png" width="35" height="35" /></div>
+                                            <div class="col-12 p-0 m-0">360°</div>
+                                        </a>
+                                        }
+
                                     </div>
-                                }
+                                </div>
                             }
                         </div>
                     </div>
@@ -316,67 +320,67 @@
 </div>
 <!-- chose_us_area end -->
 @*<div class="testimonial_area ">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="section_title text-center mb-55">
-                    <h3>Testimonials</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="testmonial_active owl-carousel">
-                    <div class="single_carousel">
-                        <div class="single_testmonial text-center">
-                            <div class="testmonial_author">
-                                <div class="thumb">
-                                    <img src="img/testimonial/1.png" alt="">
-                                </div>
-                                <h4>Jordan Adams</h4>
-                                <span>Client</span>
-                            </div>
-                            <p>
-                                “Our program is guided by the developmental milestones which embrace <br>
-                                the six most important learning domains in education”
-                            </p>
-                        </div>
-                    </div>
-                    <div class="single_carousel">
-                        <div class="single_testmonial text-center">
-                            <div class="testmonial_author">
-                                <div class="thumb">
-                                    <img src="img/testimonial/1.png" alt="">
-                                </div>
-                                <h4>Jordan Adams</h4>
-                                <span>Client</span>
-                            </div>
-                            <p>
-                                “Our program is guided by the developmental milestones which embrace <br>
-                                the six most important learning domains in education”
-                            </p>
-                        </div>
-                    </div>
-                    <div class="single_carousel">
-                        <div class="single_testmonial text-center">
-                            <div class="testmonial_author">
-                                <div class="thumb">
-                                    <img src="img/testimonial/1.png" alt="">
-                                </div>
-                                <h4>Jordan Adams</h4>
-                                <span>Client</span>
-                            </div>
-                            <p>
-                                “Our program is guided by the developmental milestones which embrace <br>
-                                the six most important learning domains in education”
-                            </p>
-                        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-55">
+                        <h3>Testimonials</h3>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="testmonial_active owl-carousel">
+                        <div class="single_carousel">
+                            <div class="single_testmonial text-center">
+                                <div class="testmonial_author">
+                                    <div class="thumb">
+                                        <img src="img/testimonial/1.png" alt="">
+                                    </div>
+                                    <h4>Jordan Adams</h4>
+                                    <span>Client</span>
+                                </div>
+                                <p>
+                                    “Our program is guided by the developmental milestones which embrace <br>
+                                    the six most important learning domains in education”
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="single_testmonial text-center">
+                                <div class="testmonial_author">
+                                    <div class="thumb">
+                                        <img src="img/testimonial/1.png" alt="">
+                                    </div>
+                                    <h4>Jordan Adams</h4>
+                                    <span>Client</span>
+                                </div>
+                                <p>
+                                    “Our program is guided by the developmental milestones which embrace <br>
+                                    the six most important learning domains in education”
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="single_testmonial text-center">
+                                <div class="testmonial_author">
+                                    <div class="thumb">
+                                        <img src="img/testimonial/1.png" alt="">
+                                    </div>
+                                    <h4>Jordan Adams</h4>
+                                    <span>Client</span>
+                                </div>
+                                <p>
+                                    “Our program is guided by the developmental milestones which embrace <br>
+                                    the six most important learning domains in education”
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>*@
+    </div>*@
 <!-- contact_us_start  -->
 <div class="contact_us overlay">
     <div class="container">
