@@ -56,7 +56,7 @@ namespace kuruinsaat.Controllers
             if (System.Web.HttpContext.Current.Session["FILEUUID"] != null)
             {
                 string fileUUID = System.Web.HttpContext.Current.Session["FILEUUID"].ToString();
-                List<Dosya> dosyalarVideoUUid = db.Dosyalar.Where(x => x.UUID == fileUUID && x.Type == 3 && x.Aktif==1).ToList();
+                List<Dosya> dosyalarVideoUUid = db.Dosyalar.Where(x => x.UUID == fileUUID && x.Type == 3 && x.Aktif == 1).ToList();
                 dosyalarVideo.AddRange(dosyalarVideoUUid);
             }
             ViewBag.dosyalarVideo = dosyalarVideo;
@@ -77,7 +77,7 @@ namespace kuruinsaat.Controllers
             }
             ViewBag.resimler = resimler;
 
-            List<Dosya> dosyalarPanorama = db.Dosyalar.Where(x => x.ElementTypeNo == 1 && x.ElementTypeId == id && x.Type==1).ToList();
+            List<Dosya> dosyalarPanorama = db.Dosyalar.Where(x => x.ElementTypeNo == 1 && x.ElementTypeId == id && x.Type == 1).ToList();
             if (System.Web.HttpContext.Current.Session["FILEUUID"] != null)
             {
                 List<Dosya> dosyalarUUid = db.Dosyalar.Where(x => x.UUID == System.Web.HttpContext.Current.Session["FILEUUID"].ToString() && x.Type == 1).ToList();
@@ -188,7 +188,7 @@ namespace kuruinsaat.Controllers
 
         public ActionResult ProjeList()
         {
-            List<Proje> projeler = db.Projeler.Where(x=>x.Aktif==1).ToList();
+            List<Proje> projeler = db.Projeler.Where(x => x.Aktif == 1).ToList();
             return View(projeler);
         }
 
@@ -298,7 +298,7 @@ namespace kuruinsaat.Controllers
             try
             {
                 string type = Request["type"].ToString();
-                if (Request.Files != null && Request.Files.Count>0)
+                if (Request.Files != null && Request.Files.Count > 0)
                 {
                     Kullanici k = (Kullanici)System.Web.HttpContext.Current.Session["Kullanici"];
 
@@ -309,10 +309,18 @@ namespace kuruinsaat.Controllers
                     Dosya dosya = new Dosya();
 
                     //Save Image
+                    //string path = Path.Combine(Server.MapPath("~/Assets/Uploads"), Path.GetFileName(Request.Files[0].FileName));
+                    //Request.Files[0].SaveAs(path);
                     string path = Path.Combine(Server.MapPath("~/Assets/Uploads"), Path.GetFileName(Request.Files[0].FileName));
-                    Request.Files[0].SaveAs(path);
+                    using (var fileReadStream = Request.Files[0].InputStream)
+                    using (var fileWriteStream = System.IO.File.OpenWrite(path))
+                    {
+                        var bufferSize = 81920;
+                        fileReadStream.CopyTo(fileWriteStream, bufferSize);
+                    }
 
-                   
+
+
                     dosya.DosyaYolu = Path.GetFileName(Request.Files[0].FileName);
                     dosya.Title = Path.GetFileName(Request.Files[0].FileName);
                     dosya.ElementTypeId = 1;
@@ -404,7 +412,7 @@ namespace kuruinsaat.Controllers
             res.Aktif = 0;
             res.GuncelleyenId = k.Id;
             res.Guncellemezamani = DateTime.Now;
-            
+
             db.SaveChanges();
             string httpref = HttpContext.Request.Headers["Referer"];
             return Redirect(httpref);
